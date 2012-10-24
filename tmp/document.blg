@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: document.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--entry type for "lucy" isn't style-file defined
+--line 14 of file references.bib
+Warning--entry type for "ieee754" isn't style-file defined
+--line 87 of file references.bib
+Warning--entry type for "sse" isn't style-file defined
+--line 93 of file references.bib
+Warning--entry type for "circleofconfusion" isn't style-file defined
+--line 102 of file references.bib
+Warning--empty journal in vimpaper
+Warning--empty journal in pgm
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            599 strings with 6141 characters,
+and the built_in function-call counts, 4476 in all, are:
+= -- 432
+> -- 161
+< -- 2
++ -- 66
+- -- 48
+* -- 217
+:= -- 761
+add.period$ -- 58
+call.type$ -- 18
+change.case$ -- 76
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 170
+empty$ -- 418
+format.name$ -- 48
+if$ -- 956
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 9
+newline$ -- 96
+num.names$ -- 38
+pop$ -- 124
+preamble$ -- 1
+purify$ -- 59
+quote$ -- 0
+skip$ -- 134
+stack$ -- 0
+substring$ -- 189
+swap$ -- 27
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 70
+warning$ -- 2
+while$ -- 44
+width$ -- 20
+write$ -- 192
+(There were 6 warnings)

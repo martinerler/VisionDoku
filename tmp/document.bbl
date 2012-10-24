@@ -1,0 +1,104 @@
+\begin{thebibliography}{10}
+
+\bibitem{ieee754}
+IEEE~Standards Association.
+\newblock Ieee 754-2008: Standard for floating-point arithmetic, 2008.
+
+\bibitem{circleofconfusion}
+Wikipedia~Commons Brion~Vibber.
+\newblock Circles\_of\_confusion\_lens\_diagram.png, 2005.
+
+\bibitem{rrrl}
+Ahmed Elhayek, Martin Welk, and Joachim Weickert.
+\newblock Simultaneous interpolation and deconvolution model for the 3-d
+  reconstruction of cell images.
+\newblock In Rudolf Mester and Michael Felsberg, editors, {\em Pattern
+  Recognition}, volume 6835 of {\em Lecture Notes in Computer Science}, pages
+  316--325. Springer Berlin / Heidelberg, 2011.
+
+\bibitem{agner}
+Agner Fog.
+\newblock Optimizing software in c++ - an optimization guide for windows, linux
+  and mac platforms.
+\newblock \url{http://agner.org/}, 2011.
+\newblock [Online; accessed 1-Sep-2012].
+
+\bibitem{applevImage}
+Apple Inc.
+\newblock vimage programming guide.
+\newblock \url{http://developer.apple.com}, 2011.
+\newblock [Online; accessed 2-Sep-2012].
+
+\bibitem{intel}
+Intel.
+\newblock Intel® pentium® processor p6100 (3m cache, 2.00 ghz).
+\newblock \url{http://ark.intel.com}, 2012.
+\newblock [Online; accessed 1-Sep-2012].
+
+\bibitem{lucy}
+Lucy.
+\newblock {An iterative technique for the rectification of observed
+  distributions}, June 1974.
+
+\bibitem{vimpaper}
+Welk Raudaschl Schwarzbauer~Erler Läuter.
+\newblock fast and robust image deconvolution, submitted.
+\newblock 2012.
+
+\bibitem{mcdonnell}
+M.J. McDonnell.
+\newblock Box-filtering techniques.
+\newblock {\em Computer Graphics and Image Processing}, 17(1):65 -- 70, 1981.
+
+\bibitem{gprof}
+{Graham}~{Kessler} {McKusick}.
+\newblock gprof: a call graph execution proﬁler.
+\newblock {\em SIGPLAN, Symposium on Compiler Construction}, 1982.
+
+\bibitem{imageJ}
+National~Institutes of~Health.
+\newblock Imagej website.
+\newblock \url{http://rsbweb.nih.gov/ij/}, 2012.
+\newblock [Online; accessed 2-Sep-2012].
+
+\bibitem{pgm}
+Jef Poskanzer.
+\newblock specification pgm.
+\newblock 1991.
+\newblock http://netpbm.sourceforge.net/doc/pgm.html.
+
+\bibitem{gcc}
+GNU project.
+\newblock Gcc, the gnu compiler collection.
+\newblock \url{gcc.gnu.org}, 2011.
+\newblock [Online; accessed 2-Sep-2012].
+
+\bibitem{richardson}
+William~Hadley Richardson.
+\newblock Bayesian-based iterative method of image restoration.
+\newblock {\em J. Opt. Soc. Am.}, 62(1):55--59, Jan 1972.
+
+\bibitem{sse}
+Felsberg Skoglund.
+\newblock Fast image processing using sse2, 2005.
+
+\bibitem{wiener}
+Norbert Wiener.
+\newblock {\em {Extrapolation, Inerpolation, and Smoothing of Stationary Time
+  Series}}.
+\newblock The M.I.T. Press, 1975.
+
+\bibitem{sse_arch}
+user:Shadim wikipedia commons.
+\newblock Sse architecture relations.
+\newblock
+  \url{http://upload.wikimedia.org/wikipedia/de/a/aa/Sse-architecture-relation%
+s.svg}, 2012.
+\newblock [Online; accessed 2-Oct-2012].
+
+\bibitem{EFunktional_Kaveh}
+Y.L. You, W.~Xu, A.~Tannenbaum, and M.~Kaveh.
+\newblock Behavioral analysis of anisotropic diffusion in image processing.
+\newblock {\em Image Processing, IEEE Transactions on}, 5(11):1539--1553, 1996.
+
+\end{thebibliography}
