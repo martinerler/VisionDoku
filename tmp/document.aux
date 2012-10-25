@@ -10,19 +10,19 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Modellierung von Bildern und Unsch\IeC {\"a}rfe}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}Bildmodellierung}{4}}
 \newlabel{eq:discrete}{{1}{4}}
-\newlabel{eq:faltung1}{{2}{5}}
-\newlabel{eq:faltung2}{{3}{5}}
+\newlabel{eq:faltung1}{{2}{4}}
+\newlabel{eq:faltung2}{{3}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Ausgangsbild}}{5}}
 \newlabel{figure_camera}{{1}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2}Bewegungsunsch\IeC {\"a}rfe}{5}}
 \newlabel{chp:einf_unschaerfe}{{1.2.2}{5}}
-\citation{circleofconfusion}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 1D Boxfilters mit 17 Pixel in horizontaler Richtung, rechts unten: der Faltungskern (vergr\IeC {\"o}\IeC {\ss }ert)}}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 1D Boxfilter mit 17 Pixel Ausdehnung in horizontaler Richtung, rechts unten: der Faltungskern (vergr\IeC {\"o}\IeC {\ss }ert)}}{6}}
 \newlabel{figure_motion}{{2}{6}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.3}Boxfilter 2D}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.4}Lensblur, Defokussierung}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 2D Boxfilter mit 17 Pixel Unsch\IeC {\"a}rfe, rechts daneben der Faltungskern, vergr\IeC {\"o}\IeC {\ss }ert}}{7}}
-\newlabel{figure_motion2d}{{3}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 2D Boxfilter mit 17 Pixel Unsch\IeC {\"a}rfe, rechts daneben der Faltungskern, vergr\IeC {\"o}\IeC {\ss }ert}}{6}}
+\newlabel{figure_motion2d}{{3}{6}}
+\citation{circleofconfusion}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.4}Lensblur, Defokussierung}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Unsch\IeC {\"a}rfe durch Defokussierung mit einem Radius von 8 Pixel synthetisch hergestellt, ortsinvariant; rechts: der zugeh\IeC {\"o}rige Kern, 5fach vergr\IeC {\"o}\IeC {\ss }ert}}{7}}
 \newlabel{figure_lensblur}{{4}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Kern und Unsch\IeC {\"a}rfe. Illustration aus Wikipedia Comons \cite  {circleofconfusion}}}{7}}
@@ -60,7 +60,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Zielsetzung}{12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Filterdesign}{12}}
 \newlabel{chp:ziel1}{{2.1}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Analyse des Konvergenzverhalten}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Analyse des Konvergenzverhaltens}{13}}
 \newlabel{chp:ziel2}{{2.2}{13}}
 \citation{gcc}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methoden}{14}}
@@ -112,18 +112,18 @@
 \newlabel{figure_genBox}{{14}{24}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Listenfilter, allgemein d\IeC {\"u}nn besetzte Kerne}{24}}
 \newlabel{chp:listFilter}{{3.3.4}{24}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Optimierung durch Parallisierung: SIMD}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Optimierung durch Paralellisierung: SIMD}{24}}
 \newlabel{chp:simd}{{3.3.5}{24}}
 \citation{sse_arch}
 \newlabel{lst:listData}{{8}{25}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {8}Datenformat des Listfilter}{25}}
 \newlabel{lst:listData}{{9}{25}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {9}verwendete x86 build-in SSE Erweiterungen}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Analyse des Konvergenzverhalten}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Analyse des Konvergenzverhaltens}{25}}
 \newlabel{chp:methodik_konvergenz}{{3.4}{25}}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Architektur der SSE Befehlss\IeC {\"a}tze von AMD und Intel X86 CPUs \cite  {sse_arch}}}{26}}
 \newlabel{figure_sse_arch}{{15}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen}}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen, invertierte Darstellung}}{26}}
 \newlabel{figure_konver_altes_bild}{{16}{26}}
 \@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Ablaufdiagramm der optimierten Version}}{27}}
 \newlabel{figure_konverg_ablauf}{{17}{27}}
@@ -132,10 +132,10 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Messergebnisse Faltungsoptimierung}{28}}
 \newlabel{chp:mess_faltungen}{{4.1}{28}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}qualitative Betrachtung}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung. Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verst\IeC {\"a}rkt.}}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung. Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verst\IeC {\"a}rkt und invertiert.}}{29}}
 \newlabel{figure_border_imageJ}{{18}{29}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Performancemessung}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Grauwertdifferenz: kaum sichtbare Randunterschiede der Faltung im Orts- und Frequenzbereich, 30fach verst\IeC {\"a}rkt, sowie Rundungsdifferenzen in der Bildmitte rechts: das Histogramm dazu}}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Grauwertdifferenz: kaum sichtbare Randunterschiede der Faltung im Orts- und Frequenzbereich, sowie Rundungsdifferenzen in der Bildmitte; Darstellung 30fach verst\IeC {\"a}rkt und invertiert, rechts: das Histogramm}}{30}}
 \newlabel{figure_border_convolve}{{19}{30}}
 \@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Grauwertdifferenz: das Histogramm zeigt die Unterschiede zwischen Ortsfaltung und separierten Boxfilter, inkl. Box 1D. keine Unterschiede}}{30}}
 \newlabel{figure_border_BoxSep}{{20}{30}}
@@ -167,28 +167,32 @@
 \newlabel{figure_zeit_rl_umgruppiert}{{33}{40}}
 \@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Zeitbedarf RRRL mit verschiedenen Faltungsroutinen, Parameter: 100 Iterationen, Alpha = 0.000001 , Epsilon = 0.1 }}{41}}
 \newlabel{figure_zeit_rrrl}{{34}{41}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces RL mit Varianzoptimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse}}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Messergebnisse der Konvergenzanalyse}{42}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces RL mit Optimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse, 100 Iterationen}}{42}}
 \newlabel{tab:konv_time_SNR_RL}{{2}{42}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces RRRL mit Varianzoptimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse}}{42}}
-\newlabel{tab:konv_time_SNR_RRRL}{{3}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces RL mit Konvergenzorientierter Optimierung mit 100 Iterationen, k=0.05, SNR=17,21 dB, alle 10 Iterationen voll gefaltet}}{43}}
-\newlabel{figure_konv_k100}{{35}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces RL mit Konvergenzorientierter Optimierung mit 100 Iterationen, k=0.5, SNR=16.37dB, alle 10 Iterationen voll gefaltet}}{43}}
-\newlabel{figure_konv_k150}{{36}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces RL bei einem Lensblur von 17px, mit 5, 50 und 100 Iterationen. Standardabweichungen der ge\IeC {\"a}nderten Grauwerte eines jeden Pixels}}{44}}
-\newlabel{figure_konv_histogramm}{{37}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces \IeC {\"U}bersicht: gew\IeC {\"a}hlte Berechnung des Punktesystems}}{45}}
-\newlabel{figure_konv_subimage}{{38}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Messergebnisse Konvergenzanalyse}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Diskussion}{46}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}simd}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Zusammenfassung/Abstract}{46}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces RRRL mit Optimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse, 100 Iterationen, $\alpha = 0.000001, \epsilon = 0.1$}}{43}}
+\newlabel{tab:konv_time_SNR_RRRL}{{3}{43}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces RL bei 500 Iterationen.}}{43}}
+\newlabel{tab:konv_time_SNR_RL_500}{{4}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Diskussion}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}SIMD}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces RL ohne Optimierung, 500 Iterationen}}{44}}
+\newlabel{figure_konv_ohne}{{35}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Zusammenfassung/Abstract}{44}}
 \citation{circleofconfusion}
 \citation{applevImage}
 \citation{sse_arch}
-\@writefile{toc}{\contentsline {section}{Abbildungsverzeichnis}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces RL mit Optimierung, 500 Iterationen, $k = 0.01$}}{45}}
+\newlabel{figure_konv_k0_01}{{36}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces RL mit Optimierung, 500 Iterationen, $k = 0.1$}}{46}}
+\newlabel{figure_konv_k0_1}{{37}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces RL bei einem Lensblur von 17px, mit 5, 50 und 100 Iterationen. Standardabweichungen der ge\IeC {\"a}nderten Grauwerte eines jeden Pixels}}{47}}
+\newlabel{figure_konv_histogramm}{{38}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces \IeC {\"U}bersicht: gew\IeC {\"a}hlte Berechnung des Punktesystems}}{48}}
+\newlabel{figure_konv_subimage}{{39}{48}}
+\@writefile{toc}{\contentsline {section}{Abbildungsverzeichnis}{49}}
 \citation{intel}
-\@writefile{toc}{\contentsline {section}{Tabellenverzeichnis}{49}}
+\@writefile{toc}{\contentsline {section}{Tabellenverzeichnis}{50}}
 \bibdata{references}
 \bibcite{ieee754}{1}
 \bibcite{circleofconfusion}{2}
@@ -209,5 +213,5 @@
 \bibcite{sse_arch}{17}
 \bibcite{EFunktional_Kaveh}{18}
 \bibstyle{plain}
-\@writefile{toc}{\contentsline {section}{Literaturverzeichnis}{51}}
-\@writefile{toc}{\contentsline {section}{Eidesstattliche Erkl\IeC {\"a}rung}{52}}
+\@writefile{toc}{\contentsline {section}{Literaturverzeichnis}{52}}
+\@writefile{toc}{\contentsline {section}{Eidesstattliche Erkl\IeC {\"a}rung}{53}}

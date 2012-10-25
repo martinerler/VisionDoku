@@ -11,10 +11,12 @@
 
 \usepackage{amsmath}
 \usepackage{framed}
-
+ 
 \usepackage[ngerman]{babel} 
 
 \usepackage{url}
+
+\usepackage{microtype}
 
 \usepackage{pdfpages}
 
@@ -139,48 +141,53 @@ optischen Parameter falsch gewählt\ldots
 \subsection{Modellierung von Bildern und Unschärfe}
 
 \subsubsection{Bildmodellierung}
+
 \textbf{Bild als Funktion}. Nach der Abtastung (Sampling) läßt sich das
 digitale Bild als Funktion beschreiben:
-Dabei stellt $\Omega$ den Bildbereich oder die Bildebene dar. Sie ist bereits
-diskretisiert und besteht aus Pixeln. Und $R$ stellt den Wertebereich dar. Er
-ist ebenso diskret und wird bei uns auf 8 bit, also einem Bereich von
-$0\ldots255$ beschränkt. Wir beschränken uns auf monochrome Bilder. Ein Wert
-aus $R$ ist ein Grauwert. Die Funktion (\ref{eq:discrete}) beschreibt ein
-Grauwertbild
+Dabei stellt $\Omega$ den Bildbereich oder die Bildebene dar.
 
 \begin{equation} \label{eq:discrete}
 f: \Omega \to R
 \end{equation}
 
-\textbf{Faltung}. Wir führen in Zusammenhang mit der diskreten Bildebene den
-Faltungsoperator ein: Gleichung (\ref{eq:faltung1}). Dabei ist $f(x)$ das
-gefaltete Bild.
-Als $g(x)$ bezeichnen wir das gedachte ideale Bild. Und $H(x)$ bezeichnen wir als Faltungskern,
- oder Punktbildfunktion
-(engl.: Point Spread Function, PSF). Sie beschreibt die Art und Weise, wie das
-ursprüngliche (gedachte) Bild verwischt worden ist. $n(x)$ beschreibt
-hier den Einfluss von Rauschen bei der Bildaufnahme. Wenn wir die Operation invertieren können, ist es also möglich
-mit Kenntis der PSF auf das gedachte ideale Bild ohne Unschärfe zu gelangen. Da
-wir aber $n(x)$ nicht kennen, sprechen wir in der Folge von einem schlecht
-gestellten inversen Problem.
-Wenn die PSF über $\Omega$ gleich bleibt, liegt eine ortsunabhängigen Faltung
-vor und wir erhalten (\ref{eq:faltung2}).
+Sie ist bereits
+diskretisiert und besteht aus Pixeln. $R$ stellt den Wertebereich dar. Er
+ist ebenso diskret und wird bei uns auf 8 bit, also einen Bereich von
+$0\ldots255$ beschränkt. Wir beschränken uns auf monochrome Bilder. Ein Wert
+aus $R$ stellt einen Grauwert dar. Ein Grauwertbild wird dann als Funktion $f$
+beschrieben.
 
-\begin{itemize}
-  \itemsep -1pt
-  \item f beaobachtetes, unscharfes Grauwertbild
-  \item g gewünschtes, scharfes Grauwert
-  \item n Bildstörungen (Rauschen)
-  \item $\Omega$ Bildebene
-\end{itemize}
+
+\textbf{Faltung}. Wir führen in Zusammenhang mit der diskreten Bildebene den
+Faltungsoperator ein. Dabei repräsentiert $f(x)$ das gefaltete Bild:
 
 \begin{equation} \label{eq:faltung1}
 f(x)=\int_\Omega{H(x,y) \cdot g(y)dy+n(x)}
 \end{equation}
 
+Als $g(x)$ bezeichnen wir das gedachte ideale Bild. Und $H(x)$ bezeichnen wir als Faltungskern,
+ oder Punktbildfunktion
+(engl.: Point Spread Function, PSF). Sie beschreibt die Art und Weise, wie das
+ursprüngliche (gedachte) Bild verwischt worden ist. $n(x)$ beschreibt
+hier den Einfluss von Rauschen bei der Bildaufnahme. Wenn wir die Operation invertieren können, ist es also möglich
+mit Kenntnis der PSF auf das gedachte ideale Bild ohne Unschärfe zu gelangen. Da
+wir aber $n(x)$ nicht kennen, sprechen wir in der Folge von einem schlecht
+gestellten inversen Problem.
+Wenn die PSF über $\Omega$ gleich bleibt, liegt eine ortsunabhängige Faltung
+vor und wir erhalten (\ref{eq:faltung2}).
+
 \begin{equation} \label{eq:faltung2}
 f(x)=(g*h)(x)+n(x)
 \end{equation}
+
+\begin{itemize}
+  \itemsep -1pt
+  \item $f$ beaobachtetes, unscharfes Grauwertbild
+  \item $g$ gewünschtes, scharfes Grauwertbild
+  \item $n$ Bildstörungen (Rauschen)
+  \item $\Omega$ Bildebene
+\end{itemize}
+
 
 
 \begin{figure}[htbp]
@@ -192,49 +199,52 @@ f(x)=(g*h)(x)+n(x)
 
 
 \subsubsection{Bewegungsunschärfe} \label{chp:einf_unschaerfe}
-Bewegungsunschärfe entsteht durch Objekt- oder Kamerabewegung während er
-Bildaufnahme. Wenn die Belichtungszeit nicht lange genug gewählt werden kann,
- entsteht Unschärfe in Bewegungsrichtung. \\
- \textbf{Ortsvariante, -invariante Bewegungsunschärfe.}Die entstehende Unschärfe
- kann ortsinvariant sein. Alle Pixel werden im Bild gleich verwischt.
- Praktisches Beispiel: Die Kamera bewegt sich während der Bildaufnahme
- (Bildrotation ausgeschlossen, oder vernachlässigt). Bei einer ortsvarianten Unschärfe 
- ändert sich der Faltungskern. Unschärfe variiert im Bild. Das kann
+Bewegungsunschärfe entsteht durch Objekt- oder Kamerabewegung während der
+Bildaufnahme. Wenn diese Bewegung im Verhältnis zur Belichtungszeit zu schnell
+abläuft, entsteht Unschärfe in Bewegungsrichtung. \\
+ \textbf{Ortsvariante, -invariante Bewegungsunschärfe.} Die Unschärfe
+ kann ortsabhängig oder auch ortsinvariant sein. Bei der ortsinvarianten
+ Unschärfewerden alle Pixel im Bild gleich verwischt.
+ Praktisches Beispiel ist die Bildaufnahme ohne Stativ: Die Kamera
+ bewegt sich während der Bildaufnahme (Bildrotation ausgeschlossen, oder vernachlässigt). 
+ Bei einer ortsvarianten Unschärfe ändert sich der Faltungskern. Unschärfe variiert im Bild. Das kann
  durch Objektbewegung passiert sein: Beispielsweise wenn ein Auto durch das Bild
  fährt kann es unscharf abgebildet werden. Die entstandene Unschärfe betrifft
  nur das Auto. Die anderen Pixel sind scharf abgebildet. Man spricht dann von einer
  ortsvarianten PSF.\\
 \textbf{Konstante oder veränderliche Unschärfe?} In dem gezeigten Bild liegt
-also ein Boxfilter zugrunde. Alle Pixel des Faltungskerns haben den selben (konstanten)
+also ein Boxfilter zugrunde. Alle Pixel des Faltungskerns haben denselben (konstanten)
 Grauwert. Die Kamera- oder Objektbewegung war in diesem Falle konstant. Wenn die Bewegung mit
 einer veränderlichen Geschwindigkeit $v$ erfolgt, entsteht eine nicht konstante
 Bewegungsunschärfe.
 
-In Bezug auf die hier implementieren Filter: Wenn sich diese PSF in eine
-Richtung ausdehnt sprechen wir in der Folge von einem eindimensionalen Faltungskern. 
+In Bezug auf die später verwendeten Filter ist festzuhalten: Wenn sich diese PSF
+in eine Richtung ausdehnt sprechen wir in der Folge von einem eindimensionalen Faltungskern. 
 Liegt eine gleichmäßige, lineare Bewegung in
-x-Richtung vor, so entspricht das dem Ergebnis, das uns der Boxfilter 1D
-liefern wird. Siehe: \ref{chp:1dBox}. Wir beschränken uns auf eine 
+$x$-Richtung vor, so entspricht das dem Ergebnisdes 1D-Boxfilters (siehe Abb.
+\ref{figure_motion}).
+Wir beschränken uns auf eine 
 ortsinvariante Dekonvolution.
-
+ 
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.8]{move17.png}
-\includegraphics[scale=2]{kern1D37px.png}
-\caption{1D Boxfilters mit 17 Pixel in horizontaler Richtung, rechts unten:
-der Faltungskern (vergrößert)}
+\includegraphics[scale=2.1]{kern1D37px.png}
+\caption{1D Boxfilter mit 17 Pixel Ausdehnung in horizontaler Richtung, rechts
+unten: der Faltungskern (vergrößert)}
 \label{figure_motion}
 \end{figure}
 
 
 
 \subsubsection{Boxfilter 2D}
-Das Bild \ref{figure_motion2d} zeigt das Ergebnis, bei einer Faltung mit einem zwei-dimensionalen Boxfilter. Alle besetzen Pixel aus h haben den gleichen
-Grauwert. Im Gegensatz zu den anderen hier gezeigten Faltungskernen hat der
-2D-Box Filter eine weniger praktische Bedeutung. Die Unschärfe aus Bild
+Das Bild \ref{figure_motion2d} zeigt das Ergebnis, bei einer Faltung mit einem
+zwei-dimensionalen Boxfilter. Alle besetzten Pixel der PSF haben den gleichen
+Grauwert.
+Im Gegensatz zu den anderen hier gezeigten Faltungskernen hat der
+2D-Boxfilter eine geringere praktische Bedeutung. Die Unschärfe aus Bild
 \ref{figure_motion2d} kommt physikalisch nicht vor und ist synthetisch erzeugt.
-Trotzdem untersuchen wir den 2D Boxfilter und stellen eine effiziente
-Implementierung vor.
+
 
 \begin{figure}[htbp]
 \centering
@@ -247,12 +257,13 @@ vergrößert}
 
 
 \subsubsection{Lensblur, Defokussierung}
+
 Der Lensblurfilter ist von besonderer praktischer Bedeutung: Er generiert ein
 Bild, das einer fehlerhaften Fokussierung entspricht. Der Kern dieses Filters
 ist ein gefüllter Kreis. Das Bild \ref{figure_confusion} illustriert, wie der Radius und die
 entstehende Unschärfe optisch zusammenhängen. Die Form der PSF rührt von der
 Form der Blende her. Im Objektiv der Kamera hat die Blendenöffnung eine
-annähernd Kreisrunde Öffnung. Je nach Objektiv kann die Blende aber auch einem
+annähernd kreisrunde Öffnung. Je nach Objektiv kann die Blende aber auch einem
 Polygon ähnlich sein.
 \textbf{Ortsvariant?} Da die Schärfeebene im Bild variieren kann, resultiert
 daraus eine mögliche ortsvariante PSF. Eine ortsvariante Dekonvolution stellt
@@ -445,12 +456,12 @@ in Kapitel \ref{chp:methodik_konvergenz} dessen Methodik.
 
 
 \begin{figure}[htbp]
-\makebox[\textwidth] {
+\framebox[\textwidth] {
 \includegraphics[scale=0.6]{gprof.png}}
 \caption{Ausgabe von gprof zum RL mit Ortsfaltung}%
 \label{figure_gprof}
 \end{figure}
-
+ 
 
 \section{Zielsetzung}
 Für die iterative Dekonvolutionsalgorithmen in Kapitel \ref{chp:algoritmen} und
@@ -499,7 +510,7 @@ nach sich ziehen.
 Gesucht ist hier die Zeitersparnis im Vergleich zur vollen Faltung im
 Ortsbereich, abhängig von der Zahl n.
 
-\subsection{Analyse des Konvergenzverhalten} \label{chp:ziel2}
+\subsection{Analyse des Konvergenzverhaltens} \label{chp:ziel2}
 Während der Iterationsschritte konvergieren manche Pixel schneller, manche
 weniger schnell. Ziel ist es, ein Maß für diese Konvergenz zu finden. Diese Pixel können in den darauf folgenden Iterationen 
 übersprungen werden, um Rechenzeit einzusparen.
@@ -659,7 +670,7 @@ Die Software wurde auf x86, also auf PC-Hardware implementiert. Zur Verfügung
 stand eine Intel-CPU: $Intel^{\textregistered} Pentium^{\textregistered}
 Processor P6100$ (3M Cache, 2.00 GHz). Sämtliche Optimierung beziehen
 sich auf diese CPU, welche über zwei Kerne verfügt. Implementiert wurden jedoch
-keine parallelisierten Algorithmen, sodass nur ein Kern mit einem Thread genutzt
+keine paralellisierten Algorithmen, sodass nur ein Kern mit einem Thread genutzt
 wurde.
  Hinsichtlich der Optimierung ist speziell das Speichermanagement relevant. Der
  Pentium P6100 verfügt über eine dynamische Cache Architektur \cite{intel}. Wenn eine andere CPU verwendet wird, sollte die Cach-Aufteilung
@@ -823,7 +834,7 @@ Bei einer mittleren Bildgröße sind also 32 Bit ausreichend. Wenn die Inputbild
 erhöht wird sind 26 Bit notwendig. Bei einer Genauigkeit von Single-Float auf
 einer x86-Plattform mit 32 bit ist float single also ausreichend. Laut dem IEEE
 Standard 754-2008 für Gleitkommazahlen \cite{ieee754} entspricht das einem
-Zahlenbereich von$1 \cdot 10^{-45}$ bis $3,403 \cdot 10^{38}$. Mit unserem GCC
+Zahlenbereich von$1 \cdot 10^{-45}$ bis $3.403 \cdot 10^{38}$. Mit unserem GCC
 reicht damit die Deklaration unseres Datenarray mit\\
 $float* meinKumuliertesBild;$\\
 
@@ -996,7 +1007,7 @@ Liste durchsucht werden!
  \end{lstlisting}
 
 
-\subsubsection{Optimierung durch Parallisierung: SIMD}\label{chp:simd}
+\subsubsection{Optimierung durch Paralellisierung: SIMD}\label{chp:simd}
 Wie in der Einleitung bereits erwähnt, kann die Optimierung sehr
 hardwarespezifisch erfolgen. In diesem Fall muss aber eine konkrete
 Hardwareplattform zu Grunde gelegt werden. In dieser Arbeit konzentrieren wir
@@ -1035,7 +1046,7 @@ for(kerny=0;kerny<hny;kerny++) {
  
 
 \begin{figure}[htbp]
-\makebox[\textwidth] 
+\framebox[\textwidth] 
 { \includegraphics[scale=0.4]{SSE_arch.png} }
 \caption{Architektur der SSE Befehlssätze von AMD und Intel X86 CPUs
 \cite{sse_arch}}%
@@ -1043,18 +1054,19 @@ for(kerny=0;kerny<hny;kerny++) {
 \end{figure}
 
 
-\subsection{Analyse des Konvergenzverhalten}\label{chp:methodik_konvergenz} 
+\subsection{Analyse des Konvergenzverhaltens}\label{chp:methodik_konvergenz} 
 
 
 \begin{figure}[htbp]
-\makebox[\textwidth] { \includegraphics[scale=1.0]{konvergenz_std.png} }
-\caption{Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen}%
+\framebox[\textwidth] { \includegraphics[scale=1.0]{konvergenz_std.png} }
+\caption{Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen, invertierte
+Darstellung}%
 \label{figure_konver_altes_bild}
 \end{figure}
 
-
+ 
 \begin{figure}[htbp]
-\makebox[\textwidth] { \includegraphics[scale=0.6]{ablaufdiagramm.png} }
+\makebox[\textwidth] { \includegraphics[scale=1.0]{ablaufRLOpti.png} }
 \caption{Ablaufdiagramm der optimierten Version}%
 \label{figure_konverg_ablauf}
 \end{figure}
@@ -1120,22 +1132,24 @@ sich leichte Pegelunterschiede bei nicht alignierten Kernen.
 
 
 \begin{figure}[htbp]
-\makebox[\textwidth] 
+\framebox[\textwidth] 
 { \includegraphics[scale=1]{qual/diff_ImageJVsConvolve.png}
-\includegraphics[scale=0.7]{qual/hist_ImageJVsCon.png} }
+\includegraphics[scale=0.6]{qual/hist_ImageJVsCon.png} }
 \caption{Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung.
-Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verstärkt.}%
+Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verstärkt und
+invertiert.}%
 \label{figure_border_imageJ}
 \end{figure}
-
+  
 
 \begin{figure}[htbp]
-\makebox[\textwidth] 
+\framebox[\textwidth] 
 { \includegraphics[scale=1]{qual/diff_ConVsfCon_mal30.png}
-\includegraphics[scale=0.7]{qual/hist_ConVsfCon.png} }
+\includegraphics[scale=0.6]{qual/hist_ConVsfCon.png} }
 \caption{Grauwertdifferenz: kaum sichtbare Randunterschiede der Faltung im Orts-
-und Frequenzbereich, 30fach verstärkt, sowie Rundungsdifferenzen in der Bildmitte
-rechts: das Histogramm dazu}%
+und Frequenzbereich, sowie Rundungsdifferenzen
+in der Bildmitte; Darstellung 30fach verstärkt und
+invertiert, rechts: das Histogramm}%
 \label{figure_border_convolve}
 \end{figure}
 
@@ -1182,9 +1196,9 @@ geänderte Randbedingung}%
 \end{figure}
 
 \begin{figure}[htbp]
-\makebox[\textwidth] 
+\framebox[\textwidth] 
 {\includegraphics[scale=1]{qual/simd_difference_fehler.png} 
-\includegraphics[scale=0.7]{qual/hist_simdVsCon.png} }
+\includegraphics[scale=0.6]{qual/hist_simdVsCon.png} }
 \caption{Grauwertdifferenz des Filters mit SIMD und ohne. 30fach verstärkt. Die
 Randbedingung weicht leicht ab und Rundungsfehler in der Mitte sind zu erkennen. }%
 \label{figure_hist_simd}
@@ -1321,8 +1335,8 @@ werden die Parameter der jeweiligen Faltungsfunktionen aufgelistet:
 \begin{itemize}
   \itemsep -1pt
   \item convolve: Ortsfaltung
-  \item listFilter const: Listenfilter mit lensblur-Kern; $Listengröße \approx
-  d^{2}/4 \cdot \pi$ Elemente. $d = 17, 11,9$
+  \item listFilter const: Listenfilter mit Lensblur-Kern; 
+  Listengröße $\approx d^{2}/4 \cdot \pi$ Elemente. $d = 17, 11,9$
   \item fconvolve: Faltung im Fourierbereich
   \item genBox: Faltung mit generischen Boxfilter. lensblur, dh. kreisrunder
   Kern. $d^{2}/4 \cdot \pi$ Elemente
@@ -1363,93 +1377,133 @@ Iterationen, Alpha = 0.000001 , Epsilon = 0.1 }%
 
 
 
-
  
-\subsection{Messergebnisse Konvergenzanalyse}
+\subsection{Messergebnisse der Konvergenzanalyse}
 
-\begin{table}[htbp]
+\textbf{Messungen bei 100 Iterationen und verschiedener Optimierungsparameter.}
+Berechnet wurde das Bild des Kameramanns (Abb. \ref{figure_camera}) mit einem Lensblur von 17px Durchmesser. In zwei Messreihen wurden der optimierte
+RL und der optimierte RRRL mit der gewöhnlichen Ortsfaltung verwendet. 
+Alle 10 Iterationen wurde die Faltung ohne Optimierung berechnet.
+Im Interfall $0.01\ldots0.09$ treten jeweils geringe qualitative Einbußen statt.
+Im Intervall $0.1\ldots0.5$ ist das Ergebnis visuell bereits deutlich
+verschlechtert. Hier sind immerhin deutliche Einsparungen in der Rechenzeit
+möglich und zwar bis zu einem Fünftel der ursprünglichen Rechenzeit
+(Tab. \ref{tab:konv_time_SNR_RL}).
+\\
+Die Tabelle \ref{tab:konv_time_SNR_RRRL} zeigt die Messreihe mit dem
+RRRL-Algorithmus. Als Regularisierungsparameter wurder gewählt: 
+$\alpha = 0.000001, \epsilon = 0.1$.
+
+
+
+\begin{table}[h]
 \begin{center}
-\begin{tabular}{ | l | l | l | l |}
+\begin{tabular}{ | l | l | l | l | l |}
 \hline
-k-Wert 			& Zeit [s] & SNR[dB] & Speedup \\ \hline
-ohne Optimierung & 	15,51 & 17,25	 & 	1,0 	\\ \hline
-0,01			&	12,29 & 17,25    &  1,27\\
-0,02			&	10,48 & 17,25    & 	1,49\\
-0,03			&	9,34  & 17,24    & 	1,66\\
-0,04			&	8,42  & 17,23    & 	1,84\\
-0,05			&	7,76  & 17,21    & 	2,00\\
-0,06			&	7,23  & 17,18    & 	2,15\\ 
-0,07			&	6,79  & 17,16    & 	2,28\\
-0,08			&	6,47  & 17,13    & 	2,40\\
-0,09			&	6,11  & 17,11    & 	2,54\\
-0,1				&	5,86  & 17,08    & 	2,65\\
-0,2				&	4,31  & 16,87    & 	3,60\\
-0,3				&	3,59  & 16,69    & 	4,32\\
-0,4				&   3,16  & 16,52    & 	4,91\\
-0,5				&	2,89  & 16,37    & 	5,37\\ \hline
-
-blurred image	&		  & 12,86 & \\
+k-Wert 				 &	Verhältnis Faltung 	& Zeit [s] & SNR[dB] & Speedup \\ \hline
+ohne Optimierung 	 & 		$1/0$				& 	15.51 & 17.25	 & 	1.0 	\\ \hline
+0.01				 & 		3.74			&	12.29 & 17.25    &  1.27\\
+0.02				 & 		2.04			&	10.48 & 17.25    & 	1.49\\
+0.03				 & 		1.46			&	9.34  & 17.24    & 	1.66\\
+0.04				 &		1.16			&	8.42  & 17.23    & 	1.84\\
+0.05				 & 		0.97			&	7.76  & 17.21    & 	2.00\\
+0.06				 & 		0.85			&	7.23  & 17.18    & 	2.15\\ 
+0.07				 & 		0.75			&	6.79  & 17.16    & 	2.28\\
+0.08				 & 		0.68			&	6.47  & 17.13    & 	2.40\\
+0.09				 & 		0.63			&	6.11  & 17.11    & 	2.54\\
+0.1					 & 		0.59			&	5.86  & 17.08    & 	2.65\\
+0.2					 &		0.37			&	4.31  & 16.87    & 	3.60\\
+0.3					 &		0.28			&	3.59  & 16.69    & 	4.32\\
+0.4					 & 		0.24			& 	  3.16  & 16.52    & 	4.91\\
+0.5					 & 		0.22			&	2.89  & 16.37    & 	5.37\\ \hline
+                     
+blurred image	&		  & 12.86 & \\
 \hline
 \end{tabular}
-\caption{RL mit Varianzoptimierung: Die Laufzeiten für verschiedene k-Werte und
-Signal-Rausch-Verhältnisse}
+\caption{RL mit Optimierung: Die Laufzeiten für verschiedene k-Werte und
+Signal-Rausch-Verhältnisse, 100 Iterationen}
 \label{tab:konv_time_SNR_RL}
 \end{center}
 \end{table}
 
 
 
-
-
-
-
-\begin{table}[htbp]
+\begin{table}[h]
 \begin{center}
-\begin{tabular}{ | l | l | l | l |}
+\begin{tabular}{ | l | l | l | l | l |}
 \hline
-k-Wert 			& Zeit [s] & SNR[dB] & Speedup \\ \hline
-ohne Optimierung & 	24,79 & 16,67   & 	1	\\ \hline
-0,01			&	20,55 & 16,67   &  1,20\\
-0,02			&	18,08 & 16,66   & 	1,37\\
-0,03			&	16,50 & 16,66   & 	1,50\\
-0,04			&	15,12 & 16,65   & 	1,63\\
-0,05			&	14,34 & 16,64   & 	1,72\\
-0,06			&	13,46 & 16,61   & 	1,84\\ 
-0,07			&	12,90 & 16,59   & 	1,92\\
-0,08			&	12,36 & 16,56   & 	2,00\\
-0,09			&	11,90 & 16,53   & 	2,08\\
-0,1				&	11,66 & 16,52   & 	2,12\\
-0,2				&	9,64  & 16,37   & 	2,57\\
-0,3				&	8,81  & 16,29   & 	2,81\\
-0,4				&   8,38  & 16,21   & 	2,95\\
-0,5				&	8,03  & 16,10   & 	3,08\\ \hline
-blurred image	&		  & 12,86 & \\
+k-Wert 			&	Verhältnis Faltung 	& Zeit [s] & SNR[dB] & Speedup \\ \hline
+ohne Optimierung& 		$1/0$			& 	24.79 & 16.67    & 	1	\\ \hline
+0.01			& 		4.36			&	20.55 & 16.67    &  	1.20\\
+0.02			& 		2.41			&	18.08 & 16.66    & 	1.37\\
+0.03			& 		1.72			&	16.50 & 16.66    & 	1.50\\
+0.04			&		1.39			&	15.12 & 16.65    & 	1.63\\
+0.05			& 		1.18			&	14.34 & 16.64    & 	1.72\\
+0.06			& 		1.04			&	13.46 & 16.61    & 	1.84\\ 
+0.07			& 		0.94			&	12.90 & 16.59    & 	1.92\\
+0.08			& 		0.86			&	12.36 & 16.56    & 	2.00\\
+0.09			& 		0.80			&	11.90 & 16.53    & 	2.08\\
+0.1				& 		0.76			&	11.66 & 16.52    & 	2.12\\
+0.2				&		0.53			&	9.64  & 16.37    & 	2.57\\
+0.3				&		0.46			&	8.81  & 16.29    & 	2.81\\
+0.4				& 		0.42			&   8.38  & 16.21    & 	2.95\\
+0.5				& 		0.39			&	8.03  & 16.10    & 	3.08\\ \hline
+blurred image	&		 				& 		  & 12.86 	 & \\
 \hline
 \end{tabular}
-\caption{RRRL mit Varianzoptimierung: Die Laufzeiten für verschiedene k-Werte
-und Signal-Rausch-Verhältnisse}
+\caption{RRRL mit Optimierung: Die Laufzeiten für verschiedene k-Werte
+und Signal-Rausch-Verhältnisse, 100 Iterationen, $\alpha = 0.000001, \epsilon = 0.1$}
 \label{tab:konv_time_SNR_RRRL}
 \end{center}
 \end{table}
 
 
+\textbf{nähere Betrachtung bei 500 Iterationen.}
+Der RL wurde nun bei 500 Iterationen getestet. Bei dieser Iterationszahl ist das
+Ergebnis der Schärfung bereits sehr deutlich zu sehen. Die Tabelle zeigt eine
+Übersicht der Messung.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ | l | l | l | l | l |}
+\hline
+k-Wert 				& Verhältnis Faltung	& Zeit [s] 	& SNR[dB] & Speedup \\ \hline
+ohne Optimierung 	&		$1/0$				& 	77.9 	& 19.33   & 	1	\\ \hline
+0.01				&		1.15				&	42.2 	& 19.29   &  	1.85\\
+0.1					&		0.23				&	15.2 	& 18.40   & 	5,13\\ \hline
+
+blurred image	&		  & 12.86 & \\
+\hline
+\end{tabular}
+\caption{RL bei 500 Iterationen.}
+\label{tab:konv_time_SNR_RL_500}
+\end{center}
+\end{table}
+ 
 
 
-\begin{figure}[htbp]
+\begin{figure}[h]
 \makebox[\textwidth] {
-\includegraphics[scale=1.0]{konvergenz_RL_0_05.png} }
-\caption{RL mit Konvergenzorientierter Optimierung mit 100 Iterationen, k=0.05,
-SNR=17,21 dB, alle 10 Iterationen voll gefaltet}%.
-\label{figure_konv_k100}
+\includegraphics[scale=1.0]{konv/out_ohne.png} }
+\caption{RL ohne Optimierung, 500 Iterationen}%.
+\label{figure_konv_ohne}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[h]
 \makebox[\textwidth] {
-\includegraphics[scale=1.0]{konvergenz_RL_0_5.png} }
-\caption{RL mit Konvergenzorientierter Optimierung mit 100 Iterationen, k=0.5,
-SNR=16.37dB, alle 10 Iterationen voll gefaltet}%
-\label{figure_konv_k150}
+\includegraphics[scale=1.0]{konv/out_0_01_500.png} }
+\caption{RL mit Optimierung, 500 Iterationen, $k = 0.01$}%.
+\label{figure_konv_k0_01}
 \end{figure}
+
+\begin{figure}[h]
+\makebox[\textwidth] {
+\includegraphics[scale=1.0]{konv/out_0_1_500.png} }
+\caption{RL mit Optimierung, 500 Iterationen, $k = 0.1$}%
+\label{figure_konv_k0_1}
+\end{figure}
+
+
 
 \begin{figure}[htbp]
 \makebox[\textwidth] {
@@ -1466,9 +1520,13 @@ Standardabweichungen der geänderten Grauwerte eines jeden Pixels}%
 \label{figure_konv_subimage}
 \end{figure}
 
+
+
+\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Diskussion}
-\subsection{simd}
+\subsection{SIMD}
 Wenn wir das Diagramm von Abb. \ref{figure_simd_vs_con} betrachten, können wir
 die Laufzeit der SIMD-optimierten Ortsfaltung sehen. Die auftretenden Peaks
 zeigen das nicht-deterministische Verhalten des Betriebssystems: Ubuntu ist kein

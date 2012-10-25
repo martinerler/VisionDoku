@@ -1,7 +1,7 @@
 \select@language {ngerman}
 \contentsline {figure}{\numberline {1}{\ignorespaces Ausgangsbild}}{5}
-\contentsline {figure}{\numberline {2}{\ignorespaces 1D Boxfilters mit 17 Pixel in horizontaler Richtung, rechts unten: der Faltungskern (vergr\IeC {\"o}\IeC {\ss }ert)}}{6}
-\contentsline {figure}{\numberline {3}{\ignorespaces 2D Boxfilter mit 17 Pixel Unsch\IeC {\"a}rfe, rechts daneben der Faltungskern, vergr\IeC {\"o}\IeC {\ss }ert}}{7}
+\contentsline {figure}{\numberline {2}{\ignorespaces 1D Boxfilter mit 17 Pixel Ausdehnung in horizontaler Richtung, rechts unten: der Faltungskern (vergr\IeC {\"o}\IeC {\ss }ert)}}{6}
+\contentsline {figure}{\numberline {3}{\ignorespaces 2D Boxfilter mit 17 Pixel Unsch\IeC {\"a}rfe, rechts daneben der Faltungskern, vergr\IeC {\"o}\IeC {\ss }ert}}{6}
 \contentsline {figure}{\numberline {4}{\ignorespaces Unsch\IeC {\"a}rfe durch Defokussierung mit einem Radius von 8 Pixel synthetisch hergestellt, ortsinvariant; rechts: der zugeh\IeC {\"o}rige Kern, 5fach vergr\IeC {\"o}\IeC {\ss }ert}}{7}
 \contentsline {figure}{\numberline {5}{\ignorespaces Kern und Unsch\IeC {\"a}rfe. Illustration aus Wikipedia Comons \cite {circleofconfusion}}}{7}
 \contentsline {figure}{\numberline {6}{\ignorespaces Unsch\IeC {\"a}rfe durch untypische PSF, rechts der passende Faltungskern (vergr\IeC {\"o}\IeC {\ss }ert), wenig Pixel besetzt}}{8}
@@ -14,10 +14,10 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces jeweils 3er Gruppen f\IeC {\"u}r den Lensblur Filter; mit Imagej erzeugt, Bresenham mit 9,11 und 17 Pixel Durchmesser, entspricht einem Radius von 4,5 und 8 Pixel}}{22}
 \contentsline {figure}{\numberline {14}{\ignorespaces verschiedene Kerne f\IeC {\"u}r den generischen Boxfilter}}{24}
 \contentsline {figure}{\numberline {15}{\ignorespaces Architektur der SSE Befehlss\IeC {\"a}tze von AMD und Intel X86 CPUs \cite {sse_arch}}}{26}
-\contentsline {figure}{\numberline {16}{\ignorespaces Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen}}{26}
+\contentsline {figure}{\numberline {16}{\ignorespaces Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen, invertierte Darstellung}}{26}
 \contentsline {figure}{\numberline {17}{\ignorespaces Ablaufdiagramm der optimierten Version}}{27}
-\contentsline {figure}{\numberline {18}{\ignorespaces Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung. Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verst\IeC {\"a}rkt.}}{29}
-\contentsline {figure}{\numberline {19}{\ignorespaces Grauwertdifferenz: kaum sichtbare Randunterschiede der Faltung im Orts- und Frequenzbereich, 30fach verst\IeC {\"a}rkt, sowie Rundungsdifferenzen in der Bildmitte rechts: das Histogramm dazu}}{30}
+\contentsline {figure}{\numberline {18}{\ignorespaces Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung. Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verst\IeC {\"a}rkt und invertiert.}}{29}
+\contentsline {figure}{\numberline {19}{\ignorespaces Grauwertdifferenz: kaum sichtbare Randunterschiede der Faltung im Orts- und Frequenzbereich, sowie Rundungsdifferenzen in der Bildmitte; Darstellung 30fach verst\IeC {\"a}rkt und invertiert, rechts: das Histogramm}}{30}
 \contentsline {figure}{\numberline {20}{\ignorespaces Grauwertdifferenz: das Histogramm zeigt die Unterschiede zwischen Ortsfaltung und separierten Boxfilter, inkl. Box 1D. keine Unterschiede}}{30}
 \contentsline {figure}{\numberline {21}{\ignorespaces Grauwertdifferenz: das Histogramm zeigt die Unterschiede zwischen zeilenweisen Boxfilters und der Ortsfaltung. keine Differenz}}{31}
 \contentsline {figure}{\numberline {22}{\ignorespaces Grauwertdifferenz zwischen Listenfilter, bzw. konstanten Listenfilter und der Ortsfaltung. keine Unterschiede }}{31}
@@ -33,7 +33,8 @@
 \contentsline {figure}{\numberline {32}{\ignorespaces Zeitbedarf RL mit verschiedenen Faltungsroutinen, gruppert nach Kerngr\IeC {\"o}\IeC {\ss }e, 100 Iterationen}}{39}
 \contentsline {figure}{\numberline {33}{\ignorespaces Zeitbedarf RL mit verschiedenen Faltungsroutinen, gruppert nach Faltungsroutinen, 100 Iterationen}}{40}
 \contentsline {figure}{\numberline {34}{\ignorespaces Zeitbedarf RRRL mit verschiedenen Faltungsroutinen, Parameter: 100 Iterationen, Alpha = 0.000001 , Epsilon = 0.1 }}{41}
-\contentsline {figure}{\numberline {35}{\ignorespaces RL mit Konvergenzorientierter Optimierung mit 100 Iterationen, k=0.05, SNR=17,21 dB, alle 10 Iterationen voll gefaltet}}{43}
-\contentsline {figure}{\numberline {36}{\ignorespaces RL mit Konvergenzorientierter Optimierung mit 100 Iterationen, k=0.5, SNR=16.37dB, alle 10 Iterationen voll gefaltet}}{43}
-\contentsline {figure}{\numberline {37}{\ignorespaces RL bei einem Lensblur von 17px, mit 5, 50 und 100 Iterationen. Standardabweichungen der ge\IeC {\"a}nderten Grauwerte eines jeden Pixels}}{44}
-\contentsline {figure}{\numberline {38}{\ignorespaces \IeC {\"U}bersicht: gew\IeC {\"a}hlte Berechnung des Punktesystems}}{45}
+\contentsline {figure}{\numberline {35}{\ignorespaces RL ohne Optimierung, 500 Iterationen}}{44}
+\contentsline {figure}{\numberline {36}{\ignorespaces RL mit Optimierung, 500 Iterationen, $k = 0.01$}}{45}
+\contentsline {figure}{\numberline {37}{\ignorespaces RL mit Optimierung, 500 Iterationen, $k = 0.1$}}{46}
+\contentsline {figure}{\numberline {38}{\ignorespaces RL bei einem Lensblur von 17px, mit 5, 50 und 100 Iterationen. Standardabweichungen der ge\IeC {\"a}nderten Grauwerte eines jeden Pixels}}{47}
+\contentsline {figure}{\numberline {39}{\ignorespaces \IeC {\"U}bersicht: gew\IeC {\"a}hlte Berechnung des Punktesystems}}{48}

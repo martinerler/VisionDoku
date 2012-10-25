@@ -5,14 +5,14 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Bildmodellierung}{4}
 \contentsline {subsubsection}{\numberline {1.2.2}Bewegungsunsch\IeC {\"a}rfe}{5}
 \contentsline {subsubsection}{\numberline {1.2.3}Boxfilter 2D}{6}
-\contentsline {subsubsection}{\numberline {1.2.4}Lensblur, Defokussierung}{6}
+\contentsline {subsubsection}{\numberline {1.2.4}Lensblur, Defokussierung}{7}
 \contentsline {subsubsection}{\numberline {1.2.5}Allgemein d\IeC {\"u}nn besetzter Kern}{8}
 \contentsline {subsection}{\numberline {1.3}Dekonvolutionsalgorithmen}{9}
 \contentsline {subsection}{\numberline {1.4}\IeC {\"U}bliche Faltungsmethoden}{10}
 \contentsline {subsection}{\numberline {1.5}Ansatz f\IeC {\"u}r Optimierungen}{11}
 \contentsline {section}{\numberline {2}Zielsetzung}{12}
 \contentsline {subsection}{\numberline {2.1}Filterdesign}{12}
-\contentsline {subsection}{\numberline {2.2}Analyse des Konvergenzverhalten}{13}
+\contentsline {subsection}{\numberline {2.2}Analyse des Konvergenzverhaltens}{13}
 \contentsline {section}{\numberline {3}Methoden}{14}
 \contentsline {subsection}{\numberline {3.1}Softwareumgebung}{14}
 \contentsline {subsubsection}{\numberline {3.1.1}System}{14}
@@ -25,17 +25,17 @@
 \contentsline {subsubsection}{\numberline {3.3.2}2D Box}{20}
 \contentsline {subsubsection}{\numberline {3.3.3}Lensblur, generischer Boxfilter}{21}
 \contentsline {subsubsection}{\numberline {3.3.4}Listenfilter, allgemein d\IeC {\"u}nn besetzte Kerne}{24}
-\contentsline {subsubsection}{\numberline {3.3.5}Optimierung durch Parallisierung: SIMD}{24}
-\contentsline {subsection}{\numberline {3.4}Analyse des Konvergenzverhalten}{25}
+\contentsline {subsubsection}{\numberline {3.3.5}Optimierung durch Paralellisierung: SIMD}{24}
+\contentsline {subsection}{\numberline {3.4}Analyse des Konvergenzverhaltens}{25}
 \contentsline {section}{\numberline {4}Ergebnisse}{28}
 \contentsline {subsection}{\numberline {4.1}Messergebnisse Faltungsoptimierung}{28}
 \contentsline {subsubsection}{\numberline {4.1.1}qualitative Betrachtung}{28}
 \contentsline {subsubsection}{\numberline {4.1.2}Performancemessung}{29}
-\contentsline {subsection}{\numberline {4.2}Messergebnisse Konvergenzanalyse}{46}
-\contentsline {section}{\numberline {5}Diskussion}{46}
-\contentsline {subsection}{\numberline {5.1}simd}{46}
-\contentsline {section}{\numberline {6}Zusammenfassung/Abstract}{46}
-\contentsline {section}{Abbildungsverzeichnis}{48}
-\contentsline {section}{Tabellenverzeichnis}{49}
-\contentsline {section}{Literaturverzeichnis}{51}
-\contentsline {section}{Eidesstattliche Erkl\IeC {\"a}rung}{52}
+\contentsline {subsection}{\numberline {4.2}Messergebnisse der Konvergenzanalyse}{42}
+\contentsline {section}{\numberline {5}Diskussion}{43}
+\contentsline {subsection}{\numberline {5.1}SIMD}{43}
+\contentsline {section}{\numberline {6}Zusammenfassung/Abstract}{44}
+\contentsline {section}{Abbildungsverzeichnis}{49}
+\contentsline {section}{Tabellenverzeichnis}{50}
+\contentsline {section}{Literaturverzeichnis}{52}
+\contentsline {section}{Eidesstattliche Erkl\IeC {\"a}rung}{53}
