@@ -12,45 +12,45 @@ Warning--entry type for "circleofconfusion" isn't style-file defined
 --line 102 of file references.bib
 Warning--empty journal in vimpaper
 Warning--empty journal in pgm
-You've used 18 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            599 strings with 6141 characters,
-and the built_in function-call counts, 4476 in all, are:
-= -- 432
-> -- 161
+            589 strings with 5967 characters,
+and the built_in function-call counts, 4042 in all, are:
+= -- 388
+> -- 147
 < -- 2
-+ -- 66
-- -- 48
-* -- 217
-:= -- 761
-add.period$ -- 58
-call.type$ -- 18
-change.case$ -- 76
++ -- 60
+- -- 44
+* -- 205
+:= -- 687
+add.period$ -- 50
+call.type$ -- 16
+change.case$ -- 68
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 170
-empty$ -- 418
-format.name$ -- 48
-if$ -- 956
+cite$ -- 18
+duplicate$ -- 156
+empty$ -- 374
+format.name$ -- 44
+if$ -- 860
 int.to.chr$ -- 0
-int.to.str$ -- 18
+int.to.str$ -- 16
 missing$ -- 9
-newline$ -- 96
-num.names$ -- 38
-pop$ -- 124
+newline$ -- 84
+num.names$ -- 34
+pop$ -- 108
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 53
 quote$ -- 0
-skip$ -- 134
+skip$ -- 122
 stack$ -- 0
-substring$ -- 189
-swap$ -- 27
+substring$ -- 179
+swap$ -- 25
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
+type$ -- 62
 warning$ -- 2
-while$ -- 44
-width$ -- 20
-write$ -- 192
+while$ -- 40
+width$ -- 18
+write$ -- 168
 (There were 6 warnings)

@@ -8,11 +8,11 @@
 \usepackage[utf8]{inputenc} 
 \usepackage{graphicx}
 %%\usepackage{hyperref}
-
+ 
 \usepackage{amsmath}
 \usepackage{framed}
  
-\usepackage[ngerman]{babel} 
+\usepackage[german]{babel}  %% ngerman für neue eher nicht
 
 \usepackage{url}
 
@@ -382,18 +382,18 @@ multipliziert werden. Für die Berechnung des vollen Bildes resultiert daraus
 eine Laufzeit von $\mathcal O(N^2K^2)$. Die Abb.\ref{figure_AppleFaltung}
 schematisiert die Berechnungsvorschrift.
 \begin{equation} \label{eq:faltungssumme}
-(f*g)(x,y) =  \sum_{m=-K}^{K} \sum_{n=-K}^{K}{f[m,n] g[x-m,y-n]}
-%%(f*g)(n) =  \sum_{m=0}^{N-1}{f[m] g[n-m]}  
+%%(f*g)(x,y) =  \sum_{m=-K}^{K} \sum_{n=-K}^{K}{f[m,n] g[x-m,y-n]}
+%%(f*g)(n) =  \sum_{m=0}^{N-1}{f[m] g[n-m]}
+(f*h)[n] = \sum_{m=0}^{N} {f[n-m] \cdot h[m]}
 \end{equation}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.6]{apple_kernel_convolution.png}
-\caption{Illuistration der Faltung im Ortsbereich, Apple
-Inc.\cite{applevImage}}%
-\label{figure_AppleFaltung}
+\includegraphics[scale=1.0]{faltung_illustration.png}
+\caption{Illuistration der Faltung im Ortsbereich}%
+\label{figure_IlluFaltung}
 \end{figure}
-
+ 
 \textbf{Faltung im Fourierbereich}. Die Faltung im Frequenzbereich macht
 sich das Faltungstheorem zu Nutze. Siehe dazu (\ref{eq:faltungssatz}). Dabei wird aus
 einer Faltung im Ortsbereich eine Multiplikation im Fourierbereich. Die Laufzeit
@@ -403,9 +403,9 @@ der Kerngröße unabhängig.
 \begin{equation} \label{eq:faltungssatz}
 f(x) * h(x) \rightarrow F(u) \cdot H(u)  
 \end{equation}
-
+ 
 \textbf{Randbehandlung}.\emph{bei Ortsfaltung}.Bei der Faltung im Ortsbereich
-ist nicht klar, wie man an den Bildrändern faltet. Siehe dazu Abb. \ref{figure_AppleFaltung}.
+ist nicht klar, wie man an den Bildrändern faltet. Siehe dazu Abb. \ref{figure_IlluFaltung}.
 Wenn das Pixel außerhalb des Bildbereichs liegt wählen wir das nächstliegende
 Randpixel. Wenn also unsere Bildebene $\Omega$ von (0,0) bis (m,n) wird so
 gewählt: Bei Pixel(6,-7) wird das Pixel(6,0) am oberen Bildrand gewählt. Bei
@@ -451,8 +451,9 @@ Ein anderer Optimierungsansatz bietet sich, wenn man das Konvergenzverhalten von
 RL und RRRL betrachtet. Es ist zu erwarten, dass sich manche Pixel während der
 Iteration kaum ändern. Trotzdem wird aber die volle Faltung ausgeführt. Wenn
 sich Pixel von der Operation auschließen ließen, könnte dadurch Rechenzeit
-eingespart werden. In Kapitel \ref{chp:ziel2} wird dieses Ziel beschrieben und
-in Kapitel \ref{chp:methodik_konvergenz} dessen Methodik.
+eingespart werden. 
+%%In Kapitel \ref{chp:ziel2} wird dieses Ziel beschrieben und
+%%in Kapitel \ref{chp:methodik_konvergenz} dessen Methodik.
 
 
 \begin{figure}[htbp]
@@ -1056,6 +1057,12 @@ for(kerny=0;kerny<hny;kerny++) {
 
 \subsection{Analyse des Konvergenzverhaltens}\label{chp:methodik_konvergenz} 
 
+Als erster Schritt soll eine Maßzahl gefunden werden, mit der sich die
+relevanten Pixel intentifizieren lassen. Relevant heißt in diesem Zusammenhang, dass nur Pixel
+berechnet werden sollen, die sich auch ändern. Es wurden zwei Maßzahlen
+berechnet. Zunächst wird die Varianz erhoben und danach betrachten wir die
+Grauwertänderung von einer Iteration zur nächsten.
+
 
 \begin{figure}[htbp]
 \framebox[\textwidth] { \includegraphics[scale=1.0]{konvergenz_std.png} }
@@ -1063,6 +1070,59 @@ for(kerny=0;kerny<hny;kerny++) {
 Darstellung}%
 \label{figure_konver_altes_bild}
 \end{figure}
+
+\textbf{Betrachtung der Varianz.} 
+Die Abbildung \ref{figure_konver_altes_bild}
+zeigt die Varianz als Grauwertbild. Auf ein Eingangsbild mit einem Lensblur von
+17$px$ Durchmesser wurde der Robust Regularisierte Richardson-Lucy Algorithmus
+angewandt. Die dunkeln Stellen weisen auf eine starke Änderung während der
+Iteration hin. Es fällt also auf, dass es viele Bereiche gibt, in denen die
+Grauwertänderung nach der gesamten Berechnung nur gering ist. 
+
+Mit Hilfe des Verschiebungssatzes kann die Varianz aus den Zwischenergebniss
+jeder Iteration berechnet werden:
+
+\begin{equation} \label{eq:verschiebungssatz}
+\sum_{i=1}^{n} (x_i - \overline{x})^2 = \left(  \sum_{i=1}^{n} x_i^2 \right ) -
+\frac{1}{n} \left ( \sum_{i=1}^{n} x_i \right ) ^2
+\end{equation}
+
+Die Abbildung \ref{figure_konv_histogramm} stellt die Verteilung der
+Standardabweichung dar.
+Gezeigt wird die Werte nach 5, 50 und 100 Iteration bei Berechnung mittels
+RL-Algorithmus. Nach 100 Iterationen nehmen Stadardabweichung und Varianz zu.
+
+
+\begin{figure}[htbp]
+\makebox[\textwidth] {
+\includegraphics[scale=1.0]{histogramm_std_konvergenz.pdf} }
+\caption{RL bei einem Lensblur von 17px, mit 5, 50 und 100 Iterationen.
+Standardabweichungen der geänderten Grauwerte eines jeden Pixels}%
+\label{figure_konv_histogramm}
+\end{figure}
+ 
+ 
+ 
+\textbf{Grauwertänderung von einer Iteration zur nächsten.}
+
+Nun wurde einfach die Differenz $|u_k-u_{k-1}|$ gebildet und ausgewertet. Im
+Diagramm der Abbildung \ref{figure_konv_verhalten} sieht man, dass einer
+Iteration besonders starke Änderungen auftreten. Wenige Pixel ändern sich
+innhalb einer Iteration um bis zu 20 Grauwerte. Weniger stark sind die
+Änderungen nach der zehnten Iteration. Nach 50 Iterationen änder sich die Pixel
+schließlich um weniger als einem Grauwert pro Iteration. 
+
+ 
+
+\begin{figure}[htbp]
+\makebox[\textwidth] {
+\includegraphics[scale=1.0]{Konvergenzverhalten.pdf} }
+\caption{Grauwertänderung von einer Iteration zur nächsten;}%
+\label{figure_konv_verhalten}
+\end{figure}
+
+
+
 
  
 \begin{figure}[htbp]
@@ -1076,48 +1136,57 @@ Darstellung}%
 \section{Ergebnisse}
 \subsection{Messergebnisse Faltungsoptimierung}\label{chp:mess_faltungen}
 
-\subsubsection{qualitative Betrachtung}
-Um einen Vergleich der Performance zu ermöglichen, muss das qualitative Ergibnis
-übereinstimmen. Die verglichenen Faltungsroutinen führen also zum selben
-qualitativen Ergebnis. Dennoch wurden verschiedene Randbedingungen implementiert
-worden. Die qualitativen Unterschieden werden hier kurz betrachtet.
-Es wurde der Kameramann aus
-Abb. \ref{figure_camera} mit einem Boxkern von 7 mal 7 Pixel gefaltet.
-Die Abb. \ref{figure_border_imageJ} zeigt einen Vergleich zur Software ImageJ
-\cite{imageJ}.
-Bei dem Vergleich treten Rundungsfehler von maximal einem Grauwert hervor.
+Das Ziel der optimierten Faltungsroutinen, ist dass die Rechenzeit bei
+gleichbleibender Qualität minimiert wird. Kurze Rechenzeit bei
+gleichbleibendem Ergebnis wird nun als gute Performance bezeichnet.
 
-\textbf{Ortsfaltung und Faltung im Frequenubereich}. Wie im
+\subsubsection{Qualitative Betrachtung}
+Um einen Vergleich der Performance zu ermöglichen, muss das qualitative Ergebnis
+übereinstimmen. Die verglichenen Faltungsroutinen führen also zum selben
+qualitativen Ergebnis. Dennoch wurden verschiedene Randbedingungen implementiert. 
+Diese qualitativen Unterschiede werden hier kurz betrachtet.
+
+%%Es wurde der Kameramann aus Abb. \ref{figure_camera} mit einem Boxkern von 7
+% mal 7 Pixel gefaltet.
+%%Die Abb. \ref{figure_border_imageJ} zeigt einen Vergleich zur Software ImageJ
+%%\cite{imageJ}.
+%%Bei dem Vergleich treten Rundungsfehler von maximal einem Grauwert hervor.
+
+\textbf{Ortsfaltung und Faltung im Frequenzbereich}. Wie im
 Kapitel \ref{chp:faltungen} beschrieben, werden die Ränder hier anders
 behandelt. Die Abb. \ref{figure_border_convolve} zeigt die Grauwertdifferenzen
 zwischen dem gefalteteten Bild im Orts- und Frequenzbereich. 
 
-\textbf{Boxfilter, 1D, 2D separiert}.Um den Boxfilter zu qualtitativ zu
+\textbf{Boxfilter, 1D, 2D separiert}.Um den Boxfilter qualtitativ zu
 evaluieren, bietet sich ein Vergleich mit der Faltung im Ortsbereich an.
 Das Ergebnis des Grauwertvergleichs ist in Abb. \ref{figure_border_BoxSep} zu sehen. Hier treten
 keine Unterschiede auf. 
 
-\textbf{Zeilenweiser Boxfilter}. Der Boxfilter zeilenweise gerechnet wurde
+\textbf{Zeilenweiser Boxfilter}. Der zeilenweise berechnete Boxfilter wurde
 ebenso mit der Faltung im Ortsbereich verglichen. Die
-Implementation zeigt keine Qualitativen Unterschiede. Siehe dazu Abb. \ref{figure_border_BoxnotSep}.
+Implementation zeigt keine qualitativen Unterschiede. Siehe dazu Abb. \ref{figure_border_BoxnotSep}.
 
 \textbf{Listenfilter}. Der konstante Listenfilter und der nicht konstante
-Listenfilter wurden auf qualtitative Unterschiede mit dem Ortsfilter verglichen.
-Ergebnis: Keine qualitativen Unterschiede. Keine Grauwertdifferenz, siehe dazu
-Abb. \ref{figure_hist_listFilter}.
+Listenfilter wurden auf qualitative Unterschiede mit dem Ortsfilter verglichen.
+Es konnten dabei keine Unterschiede gemessen werden. Die Abb.
+\ref{figure_hist_listFilter} zeigt, dass die Grauwerte aller Pixel
+übereinstimmen.
 
-\textbf{Generischer Boxfilter}. Um den generischen Boxfilter zu vergleiche,
+\textbf{Generischer Boxfilter}. Um den generischen Boxfilter zu vergleichen,
 wurden drei passende Kerne erstellt. Diese Kerne entsprechen wieder einem 7 mal
 7 Pixel großen Boxfilter. Somit kann wieder mit der normalen Ortsfaltung
-verglichen werden. Ergebnis: Keine Grauwertdiffernz. Siehe dazu Abb.
-\ref{figure_hist_genBox}.
+verglichen werden. Das Ergebnisbild in Abb. \ref{figure_hist_genBox} zeigt, dass
+gegenüber dem Filter im Ortsbereich keine Unterschiede auftreten.
 
-\textbf{Kumulierter Boxfilter}. Der kumulierte Boxfilter konnte auch mit der
-Faltung im Ortsbereich verglichen werden. Hier kann aber die Randbedingung aus
-Kapitel \ref{chp:faltungen} "`Umbiegen"' nicht implementiert werden. Es werden
+\textbf{Kumulierter Boxfilter}. Der kumulierte Boxfilter wurde auch mit der
+Faltung im Ortsbereich verglichen. Hier kann aber die Randbedingung aus
+Kapitel \ref{chp:faltungen} "`Umbiegen"' nicht implementiert werden. 
+
+todo: ändern!!!
+Es werden
 die Pixel über den Rändern mit 0 angenommen (Dirichlet Rand). Daras entstehen
 schwarze Ränder. Bei mehrfacher Faltung wandert der schwarze Rand weiter zur
-Bildmitte, sodass das Bild nach einigen Iterationsschritten mit RL oder RRRl
+Bildmitte, sodass das Bild nach einigen Iterationsschritten mit RL oder RRRL
 vollkommen schwarz wird. Die Implementation des kumulierten Boxfilter mit Dirichlet Rand
 zur iterativen Dekonvolution ist deshalb nicht möglich und wird bei der
 Performancemessung ausgenommen!
@@ -1131,15 +1200,15 @@ Kernen zwar eine erfolgreiche Dekonvolution durchgeführt werden. Jedoch ergaben
 sich leichte Pegelunterschiede bei nicht alignierten Kernen.
 
 
-\begin{figure}[htbp]
-\framebox[\textwidth] 
-{ \includegraphics[scale=1]{qual/diff_ImageJVsConvolve.png}
-\includegraphics[scale=0.6]{qual/hist_ImageJVsCon.png} }
-\caption{Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung.
-Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verstärkt und
-invertiert.}%
-\label{figure_border_imageJ}
-\end{figure}
+%%\begin{figure}[htbp]
+%%\framebox[\textwidth] 
+%%{ \includegraphics[scale=1]{qual/diff_ImageJVsConvolve.png}
+%%\includegraphics[scale=0.6]{qual/hist_ImageJVsCon.png} }
+%%\caption{Grauwertdifferenz: ImageJ im Vergleich zur Ortsfaltung.
+%%Rundungsabweichungen von max. einem Grauwert. Bild 30 fach verstärkt und
+%%invertiert.}%
+%%\label{figure_border_imageJ}
+%%\end{figure}
   
 
 \begin{figure}[htbp]
@@ -1187,13 +1256,18 @@ Dazu wurden drei Teilkerne für den generischen Boxfilter erstellt. }%
 \end{figure}
 
 
+
 \begin{figure}[htbp]
-\makebox[\textwidth] 
-{\includegraphics[scale=1]{qual/out_kumuliert.png} }
-\caption{Ergebnis der Faltung des kumulierten Boxfilter, dunkle Ränder durch
-geänderte Randbedingung}%
+\framebox[\textwidth] 
+{\includegraphics[scale=1]{qual/diff_CumVsBox.png} 
+\includegraphics[scale=0.6]{qual/hist_CumVsBox.png} }
+\caption{Grauwertdifferenz zwischen den kumulierten Boxfilter und der Faltung im
+Ortsbereich; Die Kerngröße nimmt zum Rand hin ab, so dass dort eine Differenz
+entsteht; die Darstellung wurde invertiert und 30fach verstärkt}%
 \label{figure_hist_kumuBox}
 \end{figure}
+
+
 
 \begin{figure}[htbp]
 \framebox[\textwidth] 
@@ -1260,12 +1334,13 @@ Abschnitt zur Laufzeitmessung SIMD.
 \caption{Varianz bei RRRL, 0.000001, 0.1, 1000 Iterationen}%
 \label{figure_konver_altes_bild}
 \end{figure}
+
 \begin{figure}[htbp]
-\makebox[\textwidth] { \includegraphics[scale=1]{faltungen.png} }
+\framebox[\textwidth] { \includegraphics[scale=0.8]{faltungs_diagramm.pdf} }
 \caption{Zeitbedarf der Faltungsroutinen}%
 \label{figure_zeit_faltung}
 \end{figure}  
-
+  
  
 \textbf{Laufzeit Listenfilter}
 Wie bereits erwähnt, ist der Listenfilter nicht von der Kerngröße abhängig,
@@ -1359,7 +1434,7 @@ Kerngröße, 100 Iterationen}%
 Faltungsroutinen, 100 Iterationen}%
 \label{figure_zeit_rl_umgruppiert}
 \end{figure}
-
+ 
 \textbf{Faltungsroutinen mit RRRL}.
 
 \begin{figure}[htbp]
@@ -1368,8 +1443,6 @@ Faltungsroutinen, 100 Iterationen}%
 Iterationen, Alpha = 0.000001 , Epsilon = 0.1 }%
 \label{figure_zeit_rrrl}
 \end{figure}
-
-
 
 
 
@@ -1394,14 +1467,45 @@ Die Tabelle \ref{tab:konv_time_SNR_RRRL} zeigt die Messreihe mit dem
 RRRL-Algorithmus. Als Regularisierungsparameter wurder gewählt: 
 $\alpha = 0.000001, \epsilon = 0.1$.
 
+\textbf{Rechnenaufwand der zusätzlichen Kontrollstrukturen - der Overhead.}
+Die optimierte Version der Faltungsroutine beinhaltet eine if-Klausel. Diese
+Abfrage prüft, ob der Schwellwert des jeweiligen Pixels erreicht wurde. 
+Diese Kontrollstrukturen bringen also einen Overhead mit sich. Zur
+Veranschaulichung beinhaltet hier jede Tabelle zwei Vergleichswerte der
+nicht optimierten Version:
+\begin{itemize}
+  \itemsep -1pt
+  \item performRL/performRRRL: Hier wurde die ursprüngliche Version, ohne
+  Optimierung und ohne Kontrollstrukturen gemessen (ohne Overhead)
+  \item $k=-10$: Hier wurde die optimierte Version mit Kontrollstrukturen
+  gemessen. Das $k$ wurde so niedrig gewählt, dass alle Pixel in jeder Iteration
+  voll gefaltet wurden (also mit Overhead).
+\end{itemize}
+Das Ergebnis zeigt, dass praktisch kein Overhead entsteht! Auffälig ist, dass
+die Zeiten der ursprünglichen Routine und des optimierten Algorithmus gleich
+sind. Das ist optimal, weil bereits bei einem kleinen k-Wert die Rechenzeit
+verkürzt wird.
 
+\textbf{Anzahl der ignorierten Pixel.} Um ein Maß für die Optimierung zu finden
+wurde ausgewertet, wieviele Pixel bei der Faltung übersprungen, also nicht
+gefaltet worden sind. Die Werte stehen jeweils in der zweiten Spalte in den
+Tabellen \ref{tab:konv_time_SNR_RL}, \ref{tab:konv_time_SNR_RRRL} und
+\ref{tab:konv_time_SNR_RL_500}. Die Diagramme in Abb. \ref{figure_konv_ratio}
+zeigen den Verlauf dieses Anteils. Der Verlauf des oberen Diagramms nähert sich
+auf den Endwert von $0.23$ ein (siehe Tab. \ref{tab:konv_time_SNR_RL_500}). Das
+heißt, dass das Verhältnis der gefalteten Pixel zu den ignorierten Pixel bei
+$0.23$ liegt. In anderen Worten kann man also sagen, dass hier nur ein
+Viertel aller Pixel tatsächlich berechnet wurden und die anderen ignoriert. Daraus
+entsteht laut Tabelle \ref{tab:konv_time_SNR_RL_500} aber dann eine
+Beschleunigung um das Fünffache.
 
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{ | l | l | l | l | l |}
 \hline
 k-Wert 				 &	Verhältnis Faltung 	& Zeit [s] & SNR[dB] & Speedup \\ \hline
-ohne Optimierung 	 & 		$1/0$				& 	15.51 & 17.25	 & 	1.0 	\\ \hline
+performRL		 	 & 		$1/0$			& 	15.43 & 17.25& 	1.0 	\\ \hline
+-10 			 	 & 		$1/0$			& 	15.51 & 17.25& 	1.0 	\\ \hline
 0.01				 & 		3.74			&	12.29 & 17.25    &  1.27\\
 0.02				 & 		2.04			&	10.48 & 17.25    & 	1.49\\
 0.03				 & 		1.46			&	9.34  & 17.24    & 	1.66\\
@@ -1433,8 +1537,9 @@ Signal-Rausch-Verhältnisse, 100 Iterationen}
 \begin{tabular}{ | l | l | l | l | l |}
 \hline
 k-Wert 			&	Verhältnis Faltung 	& Zeit [s] & SNR[dB] & Speedup \\ \hline
-ohne Optimierung& 		$1/0$			& 	24.79 & 16.67    & 	1	\\ \hline
-0.01			& 		4.36			&	20.55 & 16.67    &  	1.20\\
+perform RRRL	& 		$1/0$			& 	24.79 & 16.67    & 	1	\\ \hline
+-10				& 		$1/0$			& 	24.83 & 16.67    & 	1	\\ \hline
+0.01			& 		4.36			&	20.55 & 16.67    &  1.20\\
 0.02			& 		2.41			&	18.08 & 16.66    & 	1.37\\
 0.03			& 		1.72			&	16.50 & 16.66    & 	1.50\\
 0.04			&		1.39			&	15.12 & 16.65    & 	1.63\\
@@ -1458,7 +1563,7 @@ und Signal-Rausch-Verhältnisse, 100 Iterationen, $\alpha = 0.000001, \epsilon =
 \end{table}
 
 
-\textbf{nähere Betrachtung bei 500 Iterationen.}
+\textbf{Nähere Betrachtung bei 500 Iterationen.}
 Der RL wurde nun bei 500 Iterationen getestet. Bei dieser Iterationszahl ist das
 Ergebnis der Schärfung bereits sehr deutlich zu sehen. Die Tabelle zeigt eine
 Übersicht der Messung.
@@ -1468,11 +1573,12 @@ Ergebnis der Schärfung bereits sehr deutlich zu sehen. Die Tabelle zeigt eine
 \begin{tabular}{ | l | l | l | l | l |}
 \hline
 k-Wert 				& Verhältnis Faltung	& Zeit [s] 	& SNR[dB] & Speedup \\ \hline
-ohne Optimierung 	&		$1/0$				& 	77.9 	& 19.33   & 	1	\\ \hline
+perfornRL		 	&		$1/0$				& 	77.5 	& 19.33   & 	1	\\ \hline
+-10				 	&		$1/0$				& 	77.9 	& 19.33   & 	1	\\ \hline
 0.01				&		1.15				&	42.2 	& 19.29   &  	1.85\\
 0.1					&		0.23				&	15.2 	& 18.40   & 	5,13\\ \hline
 
-blurred image	&		  & 12.86 & \\
+blurred image		&		  					& 			&	12.86 & 		\\
 \hline
 \end{tabular}
 \caption{RL bei 500 Iterationen.}
@@ -1480,7 +1586,6 @@ blurred image	&		  & 12.86 & \\
 \end{center}
 \end{table}
  
-
 
 \begin{figure}[h]
 \makebox[\textwidth] {
@@ -1496,6 +1601,13 @@ blurred image	&		  & 12.86 & \\
 \label{figure_konv_k0_01}
 \end{figure}
 
+\begin{figure}[htbp]
+\makebox[\textwidth] {
+\includegraphics[scale=0.6]{ratio.png} }
+\caption{RL: Anteil gefalteter Pixel, 500 Iterationen, bei k=0.01 und k=0.1}%.
+\label{figure_konv_ratio}
+\end{figure}
+
 \begin{figure}[h]
 \makebox[\textwidth] {
 \includegraphics[scale=1.0]{konv/out_0_1_500.png} }
@@ -1505,20 +1617,6 @@ blurred image	&		  & 12.86 & \\
 
 
 
-\begin{figure}[htbp]
-\makebox[\textwidth] {
-\includegraphics[scale=1.0]{histogramm_std_konvergenz.pdf} }
-\caption{RL bei einem Lensblur von 17px, mit 5, 50 und 100 Iterationen.
-Standardabweichungen der geänderten Grauwerte eines jeden Pixels}%
-\label{figure_konv_histogramm}
-\end{figure}
-
-
-\begin{figure}[htbp]
-\makebox[\textwidth] { \includegraphics[scale=0.6]{ablauf_sub.png} }
-\caption{Übersicht: gewählte Berechnung des Punktesystems}%
-\label{figure_konv_subimage}
-\end{figure}
 
 
 

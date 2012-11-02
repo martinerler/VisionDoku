@@ -23,12 +23,6 @@ Agner Fog.
 \newblock \url{http://agner.org/}, 2011.
 \newblock [Online; accessed 1-Sep-2012].
 
-\bibitem{applevImage}
-Apple Inc.
-\newblock vimage programming guide.
-\newblock \url{http://developer.apple.com}, 2011.
-\newblock [Online; accessed 2-Sep-2012].
-
 \bibitem{intel}
 Intel.
 \newblock Intel® pentium® processor p6100 (3m cache, 2.00 ghz).
@@ -54,12 +48,6 @@ M.J. McDonnell.
 {Graham}~{Kessler} {McKusick}.
 \newblock gprof: a call graph execution proﬁler.
 \newblock {\em SIGPLAN, Symposium on Compiler Construction}, 1982.
-
-\bibitem{imageJ}
-National~Institutes of~Health.
-\newblock Imagej website.
-\newblock \url{http://rsbweb.nih.gov/ij/}, 2012.
-\newblock [Online; accessed 2-Sep-2012].
 
 \bibitem{pgm}
 Jef Poskanzer.
