@@ -4,53 +4,55 @@ The style file: plain.bst
 Database file #1: references.bib
 Warning--entry type for "lucy" isn't style-file defined
 --line 14 of file references.bib
-Warning--entry type for "ieee754" isn't style-file defined
---line 87 of file references.bib
 Warning--entry type for "sse" isn't style-file defined
---line 93 of file references.bib
+--line 123 of file references.bib
 Warning--entry type for "circleofconfusion" isn't style-file defined
---line 102 of file references.bib
+--line 132 of file references.bib
+Too many commas in name 1 of "{T. Lehmann}, {W. Oberschelp}, {E. Pelikan}, {R.Repges}" for entry lehmann
+while executing---line 1049 of file plain.bst
 Warning--empty journal in vimpaper
 Warning--empty journal in pgm
-You've used 16 entries,
+Too many commas in name 1 of "{T. Lehmann}, {W. Oberschelp}, {E. Pelikan}, {R.Repges}" for entry lehmann
+while executing---line 1090 of file plain.bst
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            589 strings with 5967 characters,
-and the built_in function-call counts, 4042 in all, are:
-= -- 388
-> -- 147
-< -- 2
-+ -- 60
-- -- 44
-* -- 205
-:= -- 687
-add.period$ -- 50
-call.type$ -- 16
-change.case$ -- 68
+            597 strings with 6184 characters,
+and the built_in function-call counts, 4505 in all, are:
+= -- 425
+> -- 176
+< -- 4
++ -- 70
+- -- 53
+* -- 245
+:= -- 769
+add.period$ -- 53
+call.type$ -- 17
+change.case$ -- 72
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 156
-empty$ -- 374
-format.name$ -- 44
-if$ -- 860
+cite$ -- 19
+duplicate$ -- 193
+empty$ -- 401
+format.name$ -- 53
+if$ -- 960
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 9
-newline$ -- 84
-num.names$ -- 34
-pop$ -- 108
+int.to.str$ -- 17
+missing$ -- 15
+newline$ -- 88
+num.names$ -- 38
+pop$ -- 111
 preamble$ -- 1
-purify$ -- 53
+purify$ -- 58
 quote$ -- 0
-skip$ -- 122
+skip$ -- 140
 stack$ -- 0
-substring$ -- 179
-swap$ -- 25
-text.length$ -- 2
+substring$ -- 181
+swap$ -- 37
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 62
 warning$ -- 2
-while$ -- 40
-width$ -- 18
-write$ -- 168
-(There were 6 warnings)
+while$ -- 43
+width$ -- 19
+write$ -- 179
+(There were 2 error messages)

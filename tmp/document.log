@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.6)  2 NOV 2012 16:18
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.8)  8 NOV 2012 10:53
 entering extended mode
  Source specials enabled.
  %&-line parsing enabled.
@@ -6,7 +6,8 @@ entering extended mode
 (./document.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, loaded.
+
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
@@ -346,15 +347,10 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count100
 \U@D=\dimen118
 )
-
-Package babel Warning: No hyphenation patterns were loaded for
-(babel)                the language `German'
-(babel)                I will use the patterns loaded for \language=0 instead.
-
-\l@german = a dialect from \language0
 \l@austrian = a dialect from \language\l@german 
 Package babel Info: Making " an active character on input line 102.
-)) (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -467,29 +463,23 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) (./document.aux
-
-LaTeX Warning: Label `lst:listData' multiply defined.
-
-
-LaTeX Warning: Label `figure_konver_altes_bild' multiply defined.
-
-)
+) (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
- (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
 \scratchdimen=\dimen130
@@ -502,7 +492,7 @@ LaTeX Font Info:    ... okay on input line 54.
 \MPnumerator=\count121
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Info: Redefining \microtypecontext on input line 54.
+LaTeX Info: Redefining \microtypecontext on input line 55.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -567,7 +557,7 @@ Runaway argument?
 ! Paragraph ended before \text@command was complete.
 <to be read again> 
                    \par 
-l.67 Dekonvolutionsverfahren \par }}
+l.68 Dekonvolutionsverfahren \par }}
                                     
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -576,7 +566,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Extra }, or forgotten \endgroup.
 \textbf  ...\else \hmode@bgroup \text@command {#1}
                                                   \bfseries \check@icl #1\ch...
-l.67 Dekonvolutionsverfahren \par }}
+l.68 Dekonvolutionsverfahren \par }}
                                     
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -587,7 +577,7 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten \endgroup.
 <recently read> \egroup 
                         
-l.67 Dekonvolutionsverfahren \par }}
+l.68 Dekonvolutionsverfahren \par }}
                                     
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -602,19 +592,18 @@ deleted material, e.g., by typing `I$}'.
 \tf@toc=\write3
 \openout3 = `document.toc'.
 
- [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 185.
+ [3] [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 220.
 
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
-
-[4] <camera.png, id=22, 256.96pt x 256.96pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 220.
+ <camera.png, id=18, 256.96pt x 256.96pt>
 File: camera.png Graphic file (type png)
- <use camera.png> [5 <./camera.png (PNG copy)>] <move17.png, id=26, 256.96pt x 
-256.96pt>
+ <use camera.png> [5]
+<move17.png, id=26, 256.96pt x 256.96pt>
 File: move17.png Graphic file (type png)
  <use move17.png>
 <kern1D37px.png, id=27, 39.14626pt x 39.14626pt>
@@ -625,280 +614,259 @@ File: box17.png Graphic file (type png)
  <use box17.png>
 <kern2D9mal9.png, id=29, 10.0375pt x 10.0375pt>
 File: kern2D9mal9.png Graphic file (type png)
- <use kern2D9mal9.png> [6 <./move17.png (PNG copy)> <./kern1D37px.png (PNG copy
-)> <./box17.png (PNG copy)> <./kern2D9mal9.png (PNG copy)>] <lensblur17.png, id
-=33, 256.96pt x 256.96pt>
+ <use kern2D9mal9.png> [6 <./camera.png (PNG copy)>] [7 <./move17.png (PNG copy
+)> <./kern1D37px.png (PNG copy)> <./box17.png (PNG copy)> <./kern2D9mal9.png (P
+NG copy)>]
+<lensblur17.png, id=37, 256.96pt x 256.96pt>
 File: lensblur17.png Graphic file (type png)
-
-<use lensblur17.png> <kern_lensblur17.png, id=34, 17.06375pt x 17.06375pt>
+ <use lensblur17.png>
+<kern_lensblur17.png, id=38, 17.06375pt x 17.06375pt>
 File: kern_lensblur17.png Graphic file (type png)
 
 <use kern_lensblur17.png>
-<Cirles_of_confusion_lens_diagram.png, id=35, 321.2pt x 266.9975pt>
+<Cirles_of_confusion_lens_diagram.png, id=39, 321.2pt x 266.9975pt>
 File: Cirles_of_confusion_lens_diagram.png Graphic file (type png)
 
-<use Cirles_of_confusion_lens_diagram.png> [7 <./lensblur17.png (PNG copy)> <./
-kern_lensblur17.png (PNG copy)> <./Cirles_of_confusion_lens_diagram.png>]
-<out_krumm17.png, id=42, 256.96pt x 256.96pt>
+<use Cirles_of_confusion_lens_diagram.png> [8 <./lensblur17.png (PNG copy)> <./
+kern_lensblur17.png (PNG copy)>] <out_krumm17.png, id=44, 256.96pt x 256.96pt>
 File: out_krumm17.png Graphic file (type png)
- <use out_krumm17.png>
-<krumm17.png, id=43, 17.06375pt x 17.06375pt>
+
+<use out_krumm17.png> <krumm17.png, id=45, 17.06375pt x 17.06375pt>
 File: krumm17.png Graphic file (type png)
- <use krumm17.png> [8 <./out_krumm17.png (PNG copy)> <./krumm17.png (PNG copy)>
-] [9]
 
-LaTeX Warning: Reference `figure_AppleFaltung' on page 10 undefined on input li
-ne 382.
+<use krumm17.png> <coded_aperture.png, id=46, 352.31625pt x 362.35374pt>
+File: coded_aperture.png Graphic file (type png)
 
-<faltung_illustration.png, id=52, 398.73103pt x 178.43214pt>
+<use coded_aperture.png> <coded_shutter.png, id=47, 330.23375pt x 396.48125pt>
+File: coded_shutter.png Graphic file (type png)
+
+<use coded_shutter.png> [9 <./Cirles_of_confusion_lens_diagram.png> <./out_krum
+m17.png (PNG copy)> <./krumm17.png (PNG copy)>] [10 <./coded_aperture.png (PNG 
+copy)> <./coded_shutter.png (PNG copy)>]
+<faltung_illustration.png, id=55, 435.12563pt x 173.14688pt>
 File: faltung_illustration.png Graphic file (type png)
 
-<use faltung_illustration.png> [10 <./faltung_illustration.png>]
-<gprof.png, id=59, 662.475pt x 268.00125pt>
+<use faltung_illustration.png> [11 <./faltung_illustration.png>] [12] [13]
+<gprof.png, id=69, 662.475pt x 268.00125pt>
 File: gprof.png Graphic file (type png)
- <use gprof.png> [11] [12 <./gprof.png (PNG copy)>] [13] [14]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 590.
+ <use gprof.png> [14] [15 <./gprof.png (PNG copy)>] [16] [17]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 767.
 
  (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 590.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 767.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 590.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 767.
 
-Overfull \hbox (14.3798pt too wide) in paragraph at lines 623--641
-[]\OT1/cmr/m/n/12 (-20) Die Bilder wur-den in eindi-men-sion-alen Ar-rays gespe
--ichert. Dabei wird ein zusam-menh[]angender
- []
+<cache.png, id=85, 417.56pt x 225.84375pt>
+File: cache.png Graphic file (type png)
+ <use cache.png> [18] [19 <./cache.png (PNG copy)>]
 
-[15]
-
-Package Listings Warning: Text dropped after begin of listing on input line 643
+Package Listings Warning: Text dropped after begin of listing on input line 845
 .
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 647.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 849.
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 671.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 671.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 873.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 671.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 873.
 
 
-LaTeX Warning: Command \textregistered invalid in math mode on input line 671.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 873.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 671.
+LaTeX Warning: Command \textregistered invalid in math mode on input line 873.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 671.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 873.
 
-[16] [17] <Box1Di.png, id=87, 72.04486pt x 56.28505pt>
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 873.
+
+[20] <Box1Di.png, id=99, 72.04486pt x 56.28505pt>
 File: Box1Di.png Graphic file (type png)
- <use Box1Di.png>
-[18 <./Box1Di.png>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 766--770
+ <use Box1Di.png> [21 <./Box1Di.png>] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 971--975
 
  []
 
-<Box2D.png, id=96, 208.96167pt x 80.44534pt>
+<Box2D.png, id=107, 208.96167pt x 80.44534pt>
 File: Box2D.png Graphic file (type png)
  <use Box2D.png>
 ! Undefined control sequence.
-l.800 dim(h_{1})=m\cdot1,dim(h_{2})=1\cdotn
-                                           $
+l.1016 ...2},dim(h_{1})=m\cdot1,dim(h_{2})=1\cdotn
+                                                  $.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 830--841
-
- []
-
-[20 <./Box2D.png>] <BoxCumu.png, id=101, 136.61626pt x 72.13338pt>
+[23 <./Box2D.png>] <BoxCumu.png, id=112, 136.61626pt x 72.13338pt>
 File: BoxCumu.png Graphic file (type png)
 
-<use BoxCumu.png> <lensblur_box.png, id=102, 88.13414pt x 96.41876pt>
+<use BoxCumu.png> [24 <./BoxCumu.png>]
+<lensblur_box.png, id=117, 88.13414pt x 96.41876pt>
 File: lensblur_box.png Graphic file (type png)
-
-<use lensblur_box.png> <bresenham.png, id=103, 50.1875pt x 46.1725pt>
+ <use lensblur_box.png>
+<bresenham.png, id=118, 50.1875pt x 46.1725pt>
 File: bresenham.png Graphic file (type png)
-
-<use bresenham.png>
-Underfull \hbox (badness 10000) in paragraph at lines 875--884
+ <use bresenham.png>
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1123
 
  []
 
-[21 <./BoxCumu.png>] [22 <./lensblur_box.png> <./bresenham.png (PNG copy)>]
-<krumme_kerne.png, id=112, 40.15pt x 34.1275pt>
+[25 <./lensblur_box.png>] [26 <./bresenham.png (PNG copy)>]
+Overfull \hbox (0.14876pt too wide) in paragraph at lines 1157--1183
+[][]\OT1/cmr/bx/n/12 Zweiter Op-ti-mie-rungs-an-satz\OT1/cmr/m/n/12 (-20) : Je-
+de Zei-le des Kerns be-steht aus zu-sam-menh[]angenden
+ []
+
+<krumme_kerne.png, id=127, 40.15pt x 34.1275pt>
 File: krumme_kerne.png Graphic file (type png)
- <use krumme_kerne.png> [23]
+ <use krumme_kerne.png> [27]
+[28 <./krumme_kerne.png (PNG copy)>]
 
-LaTeX Warning: Reference `XX' on page 24 undefined on input line 1023.
+Package Listings Warning: Text dropped after begin of listing on input line 127
+8.
 
-[24 <./krumme_kerne.png (PNG copy)>]
-<SSE_arch.png, id=119, 734.745pt x 602.25pt>
-File: SSE_arch.png Graphic file (type png)
- <use SSE_arch.png> [25]
-<konvergenz_std.png, id=124, 256.96pt x 256.96pt>
+[29] <konvergenz_std.png, id=137, 256.96pt x 256.96pt>
 File: konvergenz_std.png Graphic file (type png)
- <use konvergenz_std.png>
+
+<use konvergenz_std.png>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./histogramm_std_konvergenz.pdf): PDF i
 nclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<histogramm_std_konvergenz.pdf, id=125, 505.89pt x 505.89pt>
+<histogramm_std_konvergenz.pdf, id=138, 505.89pt x 505.89pt>
 File: histogramm_std_konvergenz.pdf Graphic file (type pdf)
 
-<use histogramm_std_konvergenz.pdf> [26 <./SSE_arch.png>]
+<use histogramm_std_konvergenz.pdf>
 
 pdfTeX warning: /usr/bin/pdflatex (file ./Konvergenzverhalten.pdf): PDF inclusi
 on: found PDF version <1.5>, but at most version <1.4> allowed
-<Konvergenzverhalten.pdf, id=131, 505.89pt x 505.89pt>
+<Konvergenzverhalten.pdf, id=140, 505.89pt x 505.89pt>
 File: Konvergenzverhalten.pdf Graphic file (type pdf)
 
-<use Konvergenzverhalten.pdf>
-<ablaufRLOpti.png, id=133, 460.52904pt x 365.96298pt>
+<use Konvergenzverhalten.pdf> [30]
+<ablaufRLOpti.png, id=145, 460.52904pt x 365.96298pt>
 File: ablaufRLOpti.png Graphic file (type png)
  <use ablaufRLOpti.png>
-[27 <./konvergenz_std.png (PNG copy)>] [28 <./histogramm_std_konvergenz.pdf>]
-[29 <./Konvergenzverhalten.pdf>] [30 <./ablaufRLOpti.png>] [31]
-<qual/diff_ConVsfCon_mal30.png, id=232, 256.96pt x 256.96pt>
+[31 <./konvergenz_std.png (PNG copy)>] [32 <./histogramm_std_konvergenz.pdf>]
+[33 <./Konvergenzverhalten.pdf>] [34 <./ablaufRLOpti.png>] [35]
+<qual/diff_ConVsfCon_mal30.png, id=244, 256.96pt x 256.96pt>
 File: qual/diff_ConVsfCon_mal30.png Graphic file (type png)
 
 <use qual/diff_ConVsfCon_mal30.png>
-<qual/hist_ConVsfCon.png, id=233, 291.0875pt x 231.86626pt>
+<qual/hist_ConVsfCon.png, id=245, 291.0875pt x 231.86626pt>
 File: qual/hist_ConVsfCon.png Graphic file (type png)
 
 <use qual/hist_ConVsfCon.png>
-<qual/hist_BoxSepVsCon.png, id=234, 285.065pt x 233.87375pt>
-File: qual/hist_BoxSepVsCon.png Graphic file (type png)
-
-<use qual/hist_BoxSepVsCon.png>
-<qual/hist_Box2dVsCon.png, id=235, 287.0725pt x 230.8625pt>
-File: qual/hist_Box2dVsCon.png Graphic file (type png)
-
-<use qual/hist_Box2dVsCon.png>
-<qual/hist_listFilterConst_Vs_Con.png, id=236, 290.08376pt x 236.885pt>
-File: qual/hist_listFilterConst_Vs_Con.png Graphic file (type png)
-
-<use qual/hist_listFilterConst_Vs_Con.png>
-<qual/hist_genBoxVsCon.png, id=237, 285.065pt x 230.8625pt>
-File: qual/hist_genBoxVsCon.png Graphic file (type png)
-
-<use qual/hist_genBoxVsCon.png>
-<qual/diff_CumVsBox.png, id=238, 256.96pt x 256.96pt>
+<qual/diff_CumVsBox.png, id=246, 256.96pt x 256.96pt>
 File: qual/diff_CumVsBox.png Graphic file (type png)
 
 <use qual/diff_CumVsBox.png>
-<qual/hist_CumVsBox.png, id=239, 301.125pt x 240.9pt>
+<qual/hist_CumVsBox.png, id=247, 301.125pt x 240.9pt>
 File: qual/hist_CumVsBox.png Graphic file (type png)
 
 <use qual/hist_CumVsBox.png>
-<qual/simd_difference_fehler.png, id=240, 256.96pt x 256.96pt>
+<qual/simd_difference_fehler.png, id=248, 256.96pt x 256.96pt>
 File: qual/simd_difference_fehler.png Graphic file (type png)
 
 <use qual/simd_difference_fehler.png>
-<qual/hist_simdVsCon.png, id=241, 295.1025pt x 241.90375pt>
+<qual/hist_simdVsCon.png, id=249, 295.1025pt x 241.90375pt>
 File: qual/hist_simdVsCon.png Graphic file (type png)
 
 <use qual/hist_simdVsCon.png>
-<qual/Lokalisierung.png, id=242, 152.57pt x 131.49126pt>
+<qual/Lokalisierung.png, id=250, 152.57pt x 131.49126pt>
 File: qual/Lokalisierung.png Graphic file (type png)
 
-<use qual/Lokalisierung.png> [32 <./qual/diff_ConVsfCon_mal30.png (PNG copy)> <
-./qual/hist_ConVsfCon.png (PNG copy)>] [33 <./qual/hist_BoxSepVsCon.png (PNG co
-py)> <./qual/hist_Box2dVsCon.png (PNG copy)> <./qual/hist_listFilterConst_Vs_Co
-n.png (PNG copy)>] [34 <./qual/hist_genBoxVsCon.png (PNG copy)> <./qual/diff_Cu
-mVsBox.png (PNG copy)> <./qual/hist_CumVsBox.png (PNG copy)>] [35 <./qual/simd_
-difference_fehler.png (PNG copy)> <./qual/hist_simdVsCon.png (PNG copy)> <./qua
-l/Lokalisierung.png (PNG copy)>]
-File: konvergenz_std.png Graphic file (type png)
- <use konvergenz_std.png>
+<use qual/Lokalisierung.png> [36 <./qual/diff_ConVsfCon_mal30.png (PNG copy)> <
+./qual/hist_ConVsfCon.png (PNG copy)>] [37 <./qual/diff_CumVsBox.png (PNG copy)
+> <./qual/hist_CumVsBox.png (PNG copy)> <./qual/simd_difference_fehler.png (PNG
+ copy)> <./qual/hist_simdVsCon.png (PNG copy)>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./faltungs_diagramm.pdf): PDF inclusion
 : found PDF version <1.5>, but at most version <1.4> allowed
-<faltungs_diagramm.pdf, id=255, 518.58482pt x 355.28946pt>
+<faltungs_diagramm.pdf, id=258, 518.58482pt x 355.28946pt>
 File: faltungs_diagramm.pdf Graphic file (type pdf)
 
-<use faltungs_diagramm.pdf> [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1360--1365
+<use faltungs_diagramm.pdf> [38 <./qual/Lokalisierung.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1625--1630
 
  []
 
-<listFilter_vs_convolve.pdf, id=260, 505.89pt x 505.89pt>
+<listFilter_vs_convolve.pdf, id=263, 505.89pt x 505.89pt>
 File: listFilter_vs_convolve.pdf Graphic file (type pdf)
 
-<use listFilter_vs_convolve.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 1375--1385
-
- []
-
-<simd_vergleich_lin.png, id=261, 505.89pt x 505.89pt>
+<use listFilter_vs_convolve.pdf> [39 <./faltungs_diagramm.pdf>] [40 <./listFilt
+er_vs_convolve.pdf>] <simd_vergleich_lin.png, id=306, 505.89pt x 505.89pt>
 File: simd_vergleich_lin.png Graphic file (type png)
 
-<use simd_vergleich_lin.png> [37 <./faltungs_diagramm.pdf>] [38 <./listFilter_v
-s_convolve.pdf>] <simd_vergleich_quadrat.pdf, id=305, 505.89pt x 505.89pt>
+<use simd_vergleich_lin.png>
+<simd_vergleich_quadrat.pdf, id=307, 505.89pt x 505.89pt>
 File: simd_vergleich_quadrat.pdf Graphic file (type pdf)
 
-<use simd_vergleich_quadrat.pdf> [39 <./simd_vergleich_lin.png>] [40 <./simd_ve
-rgleich_quadrat.pdf>] <rl_messung.png, id=319, 554.36378pt x 594.02414pt>
+<use simd_vergleich_quadrat.pdf> [41 <./simd_vergleich_lin.png>] [42 <./simd_ve
+rgleich_quadrat.pdf>] <rl_messung.png, id=321, 554.36378pt x 594.02414pt>
 File: rl_messung.png Graphic file (type png)
 
 <use rl_messung.png>
-<rl_messung_umgruppiert.png, id=320, 488.26317pt x 543.78769pt>
+<rl_messung_umgruppiert.png, id=322, 488.26317pt x 543.78769pt>
 File: rl_messung_umgruppiert.png Graphic file (type png)
 
 <use rl_messung_umgruppiert.png>
-<rrrl_messung.png, id=321, 557.00781pt x 593.1428pt>
+<rrrl_messung.png, id=323, 557.00781pt x 593.1428pt>
 File: rrrl_messung.png Graphic file (type png)
  <use rrrl_messung.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[41] [42 <./rl_messung.png>] [43 <./rl_messung_umgruppiert.png>] [44 <./rrrl_me
+[43] [44 <./rl_messung.png>] [45 <./rl_messung_umgruppiert.png>] [46 <./rrrl_me
 ssung.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<konv/out_ohne.png, id=338, 256.96pt x 256.96pt>
-File: konv/out_ohne.png Graphic file (type png)
- <use konv/out_ohne.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<konv/out_0_01_500.png, id=339, 256.96pt x 256.96pt>
-File: konv/out_0_01_500.png Graphic file (type png)
-
-<use konv/out_0_01_500.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 <ratio.png, id=340, 476.982pt x 987.69pt>
 File: ratio.png Graphic file (type png)
  <use ratio.png>
-<konv/out_0_1_500.png, id=341, 256.96pt x 256.96pt>
+<konv/out_ohne.png, id=341, 256.96pt x 256.96pt>
+File: konv/out_ohne.png Graphic file (type png)
+ <use konv/out_ohne.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<konv/out_0_01_500.png, id=342, 256.96pt x 256.96pt>
+File: konv/out_0_01_500.png Graphic file (type png)
+
+<use konv/out_0_01_500.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<konv/out_0_1_500.png, id=343, 256.96pt x 256.96pt>
 File: konv/out_0_1_500.png Graphic file (type png)
  <use konv/out_0_1_500.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[45] [46] [47 <./konv/out_ohne.png (PNG copy)>] (./document.lof [48 <./konv/out
-_0_01_500.png (PNG copy)>] [49 <./ratio.png>] [50 <./konv/out_0_1_500.png (PNG 
-copy)>])
+[47] [48 <./ratio.png>] [49] [50] [51 <./konv/out_ohne.png (PNG copy)>]
+[52 <./konv/out_0_01_500.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 2013--2045
+
+ []
+
+[53 <./konv/out_0_1_500.png (PNG copy)>] [54] (./document.lof [55])
 \tf@lof=\write4
 \openout4 = `document.lof'.
 
- [51] (./document.lot)
+ [56]
+(./document.lot)
 \tf@lot=\write5
 \openout5 = `document.lot'.
 
@@ -906,59 +874,33 @@ copy)>])
 \tf@lol=\write6
 \openout6 = `document.lol'.
 
- [52] (./document.bbl
-
-! Package inputenc Error: Unicode char \u8:ﬁ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.49 ...block gprof: a call graph execution proﬁ
-                                                  ler.
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--86
-\OT1/cmtt/m/n/12 wikimedia . org / wikipedia / de / a / aa / Sse-[]architecture
--[]relations . svg$\OT1/cmr/m/n/12 (+20) , 2012.
- []
-
-[53]) [54] [55] (./document.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ [57] (./document.bbl [58]) [59] [60]
+(./document.aux) ) 
 Here is how much of TeX's memory you used:
- 7160 strings out of 495061
- 101219 string characters out of 1182621
- 336203 words of memory out of 3000000
- 10083 multiletter control sequences out of 15000+50000
- 13638 words of font info for 91 fonts, out of 3000000 for 9000
+ 7151 strings out of 495021
+ 100824 string characters out of 1181035
+ 335263 words of memory out of 3000000
+ 10093 multiletter control sequences out of 15000+50000
+ 13529 words of font info for 90 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 33i,11n,58p,356b,1377s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-msy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on document.pdf (55 pages, 1454234 bytes).
+ 33i,10n,58p,356b,1377s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on document.pdf (60 pages, 1594800 bytes).
 PDF statistics:
- 431 PDF objects out of 1000 (max. 8388607)
+ 443 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16103 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 16093 words of extra memory for PDF output out of 17280 (max. 10000000)
 

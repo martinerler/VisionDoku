@@ -1,12 +1,21 @@
 \begin{thebibliography}{10}
 
-\bibitem{ieee754}
-IEEE~Standards Association.
-\newblock Ieee 754-2008: Standard for floating-point arithmetic, 2008.
-
 \bibitem{circleofconfusion}
 Wikipedia~Commons Brion~Vibber.
 \newblock Circles\_of\_confusion\_lens\_diagram.png, 2005.
+
+\bibitem{fastcode}
+Srinivas Chellappa, Franz Franchetti, and Markus Püschel.
+\newblock How to write fast numerical code: A small introduction.
+\newblock In Ralf Lämmel, Joost Visser, and João Saraiva, editors, {\em
+  Generative and Transformational Techniques in Software Engineering II},
+  volume 5235 of {\em Lecture Notes in Computer Science}, pages 196--259.
+  Springer Berlin Heidelberg, 2008.
+
+\bibitem{fotografie}
+{Dr. Roland Mühle}.
+\newblock Physikalische und technische grundlagen der fotografie.
+\newblock {\em Vorlesungsskript}, 2000.
 
 \bibitem{rrrl}
 Ahmed Elhayek, Martin Welk, and Joachim Weickert.
@@ -16,18 +25,16 @@ Ahmed Elhayek, Martin Welk, and Joachim Weickert.
   Recognition}, volume 6835 of {\em Lecture Notes in Computer Science}, pages
   316--325. Springer Berlin / Heidelberg, 2011.
 
-\bibitem{agner}
-Agner Fog.
-\newblock Optimizing software in c++ - an optimization guide for windows, linux
-  and mac platforms.
-\newblock \url{http://agner.org/}, 2011.
-\newblock [Online; accessed 1-Sep-2012].
-
 \bibitem{intel}
 Intel.
 \newblock Intel® pentium® processor p6100 (3m cache, 2.00 ghz).
 \newblock \url{http://ark.intel.com}, 2012.
 \newblock [Online; accessed 1-Sep-2012].
+
+\bibitem{coded_aperture}
+Anat Levin, Rob Fergus, Fr{\'e}do Durand, and William~T. Freeman.
+\newblock Image and depth from a conventional camera with a coded aperture.
+\newblock {\em ACM Trans. Graph.}, 26(3), July 2007.
 
 \bibitem{lucy}
 Lucy.
@@ -44,10 +51,10 @@ M.J. McDonnell.
 \newblock Box-filtering techniques.
 \newblock {\em Computer Graphics and Image Processing}, 17(1):65 -- 70, 1981.
 
-\bibitem{gprof}
-{Graham}~{Kessler} {McKusick}.
-\newblock gprof: a call graph execution proﬁler.
-\newblock {\em SIGPLAN, Symposium on Compiler Construction}, 1982.
+\bibitem{petzold}
+Charles Petzold.
+\newblock {\em Programming Windows, 5th Edition}.
+\newblock Microsoft Press, 2011.
 
 \bibitem{pgm}
 Jef Poskanzer.
@@ -61,6 +68,12 @@ GNU project.
 \newblock \url{gcc.gnu.org}, 2011.
 \newblock [Online; accessed 2-Sep-2012].
 
+\bibitem{coded_shutter}
+{Jack Tumblin} {Ramesh Raskar}, {Amit Agrawal}.
+\newblock Coded exposure photography: Motion deblurring using fluttered
+  shutter.
+\newblock {\em Mitsubishi Electric Research Laboratories}, 2006.
+
 \bibitem{richardson}
 William~Hadley Richardson.
 \newblock Bayesian-based iterative method of image restoration.
@@ -70,23 +83,15 @@ William~Hadley Richardson.
 Felsberg Skoglund.
 \newblock Fast image processing using sse2, 2005.
 
+\bibitem{lehmann}
+{E. Pelikan}~{R.Repges} {T. Lehmann}, {W. Oberschelp}.
+\newblock {\em {Bildverarbeitung fur die Medizin}}.
+\newblock Springer-Verlag, 1997.
+
 \bibitem{wiener}
 Norbert Wiener.
 \newblock {\em {Extrapolation, Inerpolation, and Smoothing of Stationary Time
   Series}}.
 \newblock The M.I.T. Press, 1975.
-
-\bibitem{sse_arch}
-user:Shadim wikipedia commons.
-\newblock Sse architecture relations.
-\newblock
-  \url{http://upload.wikimedia.org/wikipedia/de/a/aa/Sse-architecture-relation%
-s.svg}, 2012.
-\newblock [Online; accessed 2-Oct-2012].
-
-\bibitem{EFunktional_Kaveh}
-Y.L. You, W.~Xu, A.~Tannenbaum, and M.~Kaveh.
-\newblock Behavioral analysis of anisotropic diffusion in image processing.
-\newblock {\em Image Processing, IEEE Transactions on}, 5(11):1539--1553, 1996.
 
 \end{thebibliography}

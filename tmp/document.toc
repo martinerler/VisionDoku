@@ -1,41 +1,42 @@
 \select@language {german}
 \contentsline {section}{\numberline {1}Einleitung und Stand der Forschung}{4}
 \contentsline {subsection}{\numberline {1.1}Dekonvolution in der Bildverarbeitung}{4}
-\contentsline {subsection}{\numberline {1.2}Modellierung von Bildern und Unsch\IeC {\"a}rfe}{4}
-\contentsline {subsubsection}{\numberline {1.2.1}Bildmodellierung}{4}
+\contentsline {subsection}{\numberline {1.2}Modellierung von Bildern und Unsch\IeC {\"a}rfe}{5}
+\contentsline {subsubsection}{\numberline {1.2.1}Bildmodellierung}{5}
 \contentsline {subsubsection}{\numberline {1.2.2}Bewegungsunsch\IeC {\"a}rfe}{5}
 \contentsline {subsubsection}{\numberline {1.2.3}Boxfilter 2D}{6}
-\contentsline {subsubsection}{\numberline {1.2.4}Lensblur, Defokussierung}{7}
+\contentsline {subsubsection}{\numberline {1.2.4}Lensblur, Defokussierung}{8}
 \contentsline {subsubsection}{\numberline {1.2.5}Allgemein d\IeC {\"u}nn besetzter Kern}{8}
-\contentsline {subsection}{\numberline {1.3}Dekonvolutionsalgorithmen}{9}
-\contentsline {subsection}{\numberline {1.4}\IeC {\"U}bliche Faltungsmethoden}{10}
-\contentsline {subsection}{\numberline {1.5}Ansatz f\IeC {\"u}r Optimierungen}{11}
-\contentsline {section}{\numberline {2}Zielsetzung}{12}
-\contentsline {subsection}{\numberline {2.1}Filterdesign}{12}
-\contentsline {subsection}{\numberline {2.2}Analyse des Konvergenzverhaltens}{13}
-\contentsline {section}{\numberline {3}Methoden}{14}
-\contentsline {subsection}{\numberline {3.1}Softwareumgebung}{14}
-\contentsline {subsubsection}{\numberline {3.1.1}System}{14}
-\contentsline {subsubsection}{\numberline {3.1.2}Compiler und Linker}{14}
-\contentsline {subsubsection}{\numberline {3.1.3}Dateiformat}{15}
-\contentsline {subsubsection}{\numberline {3.1.4}Datenorganisation und Pixelzugriff}{16}
-\contentsline {subsection}{\numberline {3.2}Verwendete Hardware}{16}
-\contentsline {subsection}{\numberline {3.3}Filterdesign}{18}
-\contentsline {subsubsection}{\numberline {3.3.1}1D Box}{18}
-\contentsline {subsubsection}{\numberline {3.3.2}2D Box}{20}
-\contentsline {subsubsection}{\numberline {3.3.3}Lensblur, generischer Boxfilter}{21}
-\contentsline {subsubsection}{\numberline {3.3.4}Listenfilter, allgemein d\IeC {\"u}nn besetzte Kerne}{24}
-\contentsline {subsubsection}{\numberline {3.3.5}Optimierung durch Paralellisierung: SIMD}{24}
-\contentsline {subsection}{\numberline {3.4}Analyse des Konvergenzverhaltens}{26}
-\contentsline {section}{\numberline {4}Ergebnisse}{31}
-\contentsline {subsection}{\numberline {4.1}Messergebnisse Faltungsoptimierung}{31}
-\contentsline {subsubsection}{\numberline {4.1.1}Qualitative Betrachtung}{31}
-\contentsline {subsubsection}{\numberline {4.1.2}Performancemessung}{32}
-\contentsline {subsection}{\numberline {4.2}Messergebnisse der Konvergenzanalyse}{41}
-\contentsline {section}{\numberline {5}Diskussion}{46}
-\contentsline {subsection}{\numberline {5.1}SIMD}{46}
-\contentsline {section}{\numberline {6}Zusammenfassung/Abstract}{47}
-\contentsline {section}{Abbildungsverzeichnis}{51}
-\contentsline {section}{Tabellenverzeichnis}{52}
-\contentsline {section}{Literaturverzeichnis}{54}
-\contentsline {section}{Eidesstattliche Erkl\IeC {\"a}rung}{55}
+\contentsline {subsection}{\numberline {1.3}\IeC {\"U}bliche Faltungsmethoden}{11}
+\contentsline {subsection}{\numberline {1.4}Dekonvolutionsalgorithmen}{12}
+\contentsline {subsection}{\numberline {1.5}Ansatz f\IeC {\"u}r Optimierungen}{14}
+\contentsline {section}{\numberline {2}Zielsetzung}{15}
+\contentsline {subsection}{\numberline {2.1}Filterdesign}{15}
+\contentsline {subsection}{\numberline {2.2}Analyse des Konvergenzverhaltens}{16}
+\contentsline {section}{\numberline {3}Methoden}{17}
+\contentsline {subsection}{\numberline {3.1}Softwareumgebung}{17}
+\contentsline {subsubsection}{\numberline {3.1.1}System}{17}
+\contentsline {subsubsection}{\numberline {3.1.2}Compiler und Linker}{17}
+\contentsline {subsubsection}{\numberline {3.1.3}Dateiformat}{18}
+\contentsline {subsubsection}{\numberline {3.1.4}Datenorganisation und Pixelzugriff}{18}
+\contentsline {subsection}{\numberline {3.2}Verwendete Hardware}{20}
+\contentsline {subsection}{\numberline {3.3}Filterdesign}{21}
+\contentsline {subsubsection}{\numberline {3.3.1}1D Box}{21}
+\contentsline {subsubsection}{\numberline {3.3.2}2D Box}{23}
+\contentsline {subsubsection}{\numberline {3.3.3}Lensblur, generischer Boxfilter}{25}
+\contentsline {subsubsection}{\numberline {3.3.4}Listenfilter, allgemein d\IeC {\"u}nn besetzte Kerne}{28}
+\contentsline {subsubsection}{\numberline {3.3.5}Optimierung durch Paralellisierung: SIMD}{28}
+\contentsline {subsection}{\numberline {3.4}Analyse des Konvergenzverhaltens}{30}
+\contentsline {section}{\numberline {4}Ergebnisse}{35}
+\contentsline {subsection}{\numberline {4.1}Messergebnisse Faltungsoptimierung}{35}
+\contentsline {subsubsection}{\numberline {4.1.1}Qualitative Betrachtung}{35}
+\contentsline {subsubsection}{\numberline {4.1.2}Performancemessung}{36}
+\contentsline {subsection}{\numberline {4.2}Messergebnisse der Konvergenzanalyse}{43}
+\contentsline {section}{\numberline {5}Diskussion}{49}
+\contentsline {subsection}{\numberline {5.1}Eigenschaften der entwickelten Faltungsroutinen}{49}
+\contentsline {subsection}{\numberline {5.2}Vor- und Nachteile der konvergenzorientierten Optimierung}{51}
+\contentsline {section}{\numberline {6}Zusammenfassung/Abstract}{53}
+\contentsline {section}{Abbildungsverzeichnis}{56}
+\contentsline {section}{Tabellenverzeichnis}{57}
+\contentsline {section}{Literaturverzeichnis}{59}
+\contentsline {section}{Eidesstattliche Erkl\IeC {\"a}rung}{60}

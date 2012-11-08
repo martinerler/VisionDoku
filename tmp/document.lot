@@ -1,5 +1,5 @@
 \select@language {german}
-\contentsline {table}{\numberline {1}{\ignorespaces CPU Eckdaten Intel P6100\cite {intel}}}{17}
-\contentsline {table}{\numberline {2}{\ignorespaces RL mit Optimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse, 100 Iterationen}}{45}
-\contentsline {table}{\numberline {3}{\ignorespaces RRRL mit Optimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse, 100 Iterationen, $\alpha = 0.000001, \epsilon = 0.1$}}{46}
-\contentsline {table}{\numberline {4}{\ignorespaces RL bei 500 Iterationen.}}{46}
+\contentsline {table}{\numberline {1}{\ignorespaces CPU-Eckdaten Intel P6100\cite {intel}}}{21}
+\contentsline {table}{\numberline {2}{\ignorespaces RL mit Optimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse, 100 Iterationen}}{49}
+\contentsline {table}{\numberline {3}{\ignorespaces RRRL mit Optimierung: Die Laufzeiten f\IeC {\"u}r verschiedene k-Werte und Signal-Rausch-Verh\IeC {\"a}ltnisse, 100 Iterationen, $\alpha = 0.000001, \epsilon = 0.1$}}{50}
+\contentsline {table}{\numberline {4}{\ignorespaces RL bei 500 Iterationen.}}{50}
